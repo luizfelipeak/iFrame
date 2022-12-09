@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find the location of fishes which can be used to exchange for standing points or resources.">
+    <meta name="keywords" content="Warframe, information, fishing, resources, Plains of Eidolon, Orb Vallis, Cambion Drift">
+    <meta name="author" content="Luiz Felipe A. K.">
+
+    <title>iFrame | Fishing</title>
+
+    <link rel="icon" sizes="48x48" href="assets/imgs/favicon.ico">
+    
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="fishing.css">
+</head>
+<body>
+    <header class="header-nav">
+        <nav>
+            <div class="nav-site">
+                <button id="nav-btn" aria-controls="modal-nav" aria-label="Navigation menu" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" focusable="false" aria-hidden="true" width="2rem">
+                        <path fill="currentColor" d="M6 36V33H42V36ZM6 25.5V22.5H42V25.5ZM6 15V12H42V15Z"/>
+                    </svg>
+                </button>
+                
+                <a href="index.html" class="nav-logo" aria-label="Home page">
+                    <svg version="1.1" viewBox="0 0 500 125" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true" width="6rem">
+                        <path fill="currentColor" d="m12.77 65.09v-52.5h20v105h-20zm45 0v-52.5h52v20h-32v22h27v20h-27v43h-20zm70 0v-52.5h23.462c27.192 0 31.13 0.84565 38.62 8.2945 6.519 6.483 9.3162 13.497 9.2615 23.223-0.0709 12.61-5.8808 22.659-15.908 27.513-2.44 1.1812-4.4364 2.3186-4.4364 2.5275 0 0.32208 10.445 19.152 21.185 38.192l2.9615 5.25h-22.991l-20.777-40.5-11.378-0.59981v41.1h-20zm42.302-8.5669c7.7961-2.1649 10.537-13.722 4.7824-20.167l-2.9156-3.2658-24.169-0.6675v25.168l9.25-6e-3c5.0875-3e-3 10.961-0.48068 13.052-1.0614zm40.016 57.817c0.73952-1.7875 10.708-26.312 22.153-54.5s21.123-51.25 21.507-51.25c0.91199 0 11.33 25.254 43.007 104.25l1.9047 4.75h-22.621l-2.1958-6.0223-2.1958-6.0223-36.211 0.54464-3.8316 11.5h-22.86zm53.516-28.574c-0.18333-0.45346-2.3572-6.7535-4.8308-14s-4.7282-13.176-5.0102-13.176c-0.43182 0-8.8285 22.869-9.8157 26.734-0.24501 0.9592 2.1368 1.2658 9.8333 1.2658 5.5862 0 10.007-0.37102 9.8233-0.82448zm51.167-21.676v-53.5h2.897c2.3464 0 4.1026 1.378 9.2397 7.25 3.4885 3.9875 12.389 14 19.778 22.25s13.961 15.588 14.603 16.307c0.9283 1.0389 5.5233-3.5277 22.388-22.25 18.537-20.578 21.592-23.557 24.157-23.557h2.9367v107h-21v-29.5c0-16.225-0.1608-29.5-0.35734-29.5-0.41006 0-18.79 18.749-23.528 24l-3.1579 3.5-13.228-13.772c-7.2755-7.5747-13.566-13.762-13.978-13.75-0.4125 0.0122-0.75 13.297-0.75 29.522v29.5h-20zm120 1v-52.5h52v20h-32v22h28v20h-28v22h34v21h-54z"/>
+                    </svg>
+                </a>
+                
+                <ul class="nav-bar">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="conservation.html">Conservation</a>
+                    </li>
+                    <li>
+                        <a class="active" href="fishing.html">Fishing</a>
+                    </li>
+                    <li>
+                        <a href="mining.html">Mining</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="modal-nav" data-state="closed" role="dialog">
+                <div class="modal-content">
+                    <ul class="modal-nav-bar">
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="conservation.html">Conservation</a>
+                        </li>
+                        <li>
+                            <a class="active" href="fishing.html">Fishing</a>
+                        </li>
+                        <li>
+                            <a href="mining.html">Mining</a>
+                        </li>
+                    </ul>
+
+                    <button id="close-modal" aria-label="Close modal">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" focusable="false" aria-hidden="true" width="2rem">
+                            <path fill="currentColor" d="m12.45 37.65-2.1-2.1L21.9 24 10.35 12.45l2.1-2.1L24 21.9l11.55-11.55 2.1 2.1L26.1 24l11.55 11.55-2.1 2.1L24 26.1Z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1 hidden>Fishing</h1>
+
+        <section class="section">
+            <div class="accordion" id="plains">
+                <h2>Plains of Eidolon</h2>
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" viewBox="0 0 48 48" class="svg-open">
+                    <path fill="currentColor" d="M22.5 38V25.5H10V22.5H22.5V10H25.5V22.5H38V25.5H25.5V38Z"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" viewBox="0 0 48 48" class="svg-close">
+                    <path fill="currentColor" d="M10 25.5v-3h28v3Z"/>
+                </svg>
+            </div>
+            
+            <div class="section-content open" id="plains-content">
+                <div class="container">
+                    <h3>Mawfish</h3>
+                    <p><b>Biome</b>: lake.</p>
+                    <p><b>Activity</b>: day.</p>
+                    <p><b>Spear(s)</b>: lanzo, tulok, peram.</p>
+                    <p><b>Rarity</b>: common.</p>
+
+                    <p class="table-info"><b>Standing and resources</b></p>
+                    <div class="standing">
+                        <p><b>Small</b></p>
+                        <p><b>Medium</b></p>
+                        <p><b>Large</b></p>
+
+                        <p>25</p>
+                        <p>35</p>
+                        <p>50</p>
+
+                        <p>3 Fish meat</p>
+                        <p>4 Fish meat</p>
+                        <p>5 Fish meat</p>
+                        
+                        <p>1 Fish scale</p>
+                        <p>2 Fish scale</p>
+                        <p>3 Fish scale</p>
+
+                        <p>2 Fish oil</p>
+                        <p>3 Fish oil</p>
+                        <p>4 Fish oil</p>
+
+                        <p>1 Mawfish bones</p>
+                        <p>1 Mawfish bones</p>
+                        <p>1 Mawfish bones</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <h3>Charc eel</h3>
+                    <p><b>Biome</b>: lake.</p>
+                    <p><b>Activity</b>: day and night.</p>
+                    <p><b>Spear(s)</b>: lanzo, tulok, peram.</p>
+                    <p><b>Rarity</b>: common.</p>
+
+                    <p class="table-info"><b>Standing and resources</b></p>
+                    <div class="standing">
+                        <p><b>Small</b></p>
+                        <p><b>Medium</b></p>
+                        <p><b>Large</b></p>
+
+                        <p>25</p>
+                        <p>35</p>
+                        <p>50</p>
+
+                        <p>3 Fish meat</p>
+                        <p>4 Fish meat</p>
+                        <p>5 Fish meat</p>
+                        
+                        <p>2 Fish scale</p>
+                        <p>3 Fish scale</p>
+                        <p>4 Fish scale</p>
+
+                        <p>1 Fish oil</p>
+                        <p>2 Fish oil</p>
+                        <p>3 Fish oil</p>
+
+                        <p>1 Charc electroplax</p>
+                        <p>1 Charc electroplax</p>
+                        <p>1 Charc electroplax</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <h3>Khut-khut</h3>
+                    <p><b>Biome</b>: pond.</p>
+                    <p><b>Activity</b>: day.</p>
+                    <p><b>Spear(s)</b>: lanzo, tulok, peram.</p>
+                    <p><b>Rarity</b>: common.</p>
+
+                    <p class="table-info"><b>Standing and resources</b></p>
+                    <div class="standing">
+                        <p><b>Small</b></p>
+                        <p><b>Medium</b></p>
+                        <p><b>Large</b></p>
+
+                        <p>25</p>
+                        <p>35</p>
+                        <p>50</p>
+
+                        <p>2 Fish meat</p>
+                        <p>3 Fish meat</p>
+                        <p>4 Fish meat</p>
+                        
+                        <p>1 Fish scale</p>
+                        <p>2 Fish scale</p>
+                        <p>3 Fish scale</p>
+
+                        <p>3 Fish oil</p>
+                        <p>4 Fish oil</p>
+                        <p>5 Fish oil</p>
+
+                        <p>1 khut-khut venom sac</p>
+                        <p>1 khut-khut venom sac</p>
+                        <p>1 khut-khut venom sac</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <h3>Yogwun</h3>
+                    <p><b>Biome</b>: pond.</p>
+                    <p><b>Activity</b>: day.</p>
+                    <p><b>Spear(s)</b>: lanzo, tulok, peram.</p>
+                    <p><b>Rarity</b>: common.</p>
+
+                    <p class="table-info"><b>Standing and resources</b></p>
+                    <div class="standing">
+                        <p><b>Small</b></p>
+                        <p><b>Medium</b></p>
+                        <p><b>Large</b></p>
+
+                        <p>25</p>
+                        <p>35</p>
+                        <p>50</p>
+
+                        <p>4 Fish meat</p>
+                        <p>5 Fish meat</p>
+                        <p>6 Fish meat</p>
+                        
+                        <p>1 Fish scale</p>
+                        <p>2 Fish scale</p>
+                        <p>3 Fish scale</p>
+
+                        <p>1 Fish oil</p>
+                        <p>2 Fish oil</p>
+                        <p>3 Fish oil</p>
+
+                        <p>1 Yogwun stomach</p>
+                        <p>1 Yogwun stomach</p>
+                        <p>1 Yogwun stomach</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <h3>Mortus lungfish</h3>
+                    <p><b>Biome</b>: pond.</p>
+                    <p><b>Activity</b>: day and night (best at night).</p>
+                    <p><b>Spear(s)</b>: lanzo, peram.</p>
+                    <p><b>Rarity</b>: uncommon.</p>
+
+                    <p class="table-info"><b>Standing and resources</b></p>
+                    <div class="standing">
+                        <p><b>Small</b></p>
+                        <p><b>Medium</b></p>
+                        <p><b>Large</b></p>
+
+                        <p>100</p>
+                        <p>125</p>
+                        <p>200</p>
+
+                        <p>3 Fish meat</p>
+                        <p>4 Fish meat</p>
+                        <p>5 Fish meat</p>
+                        
+                        <p>1 Fish scale</p>
+                        <p>2 Fish scale</p>
+                        <p>3 Fish scale</p>
+
+                        <p>4 Fish oil</p>
+                        <p>6 Fish oil</p>
+                        <p>8 Fish oil</p>
+
+                        <p>1 Mortus horn</p>
+                        <p>1 Mortus horn</p>
+                        <p>1 Mortus horn</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <h3>Goopolla</h3>
+                    <p><b>Biome</b>: ocean.</p>
+                    <p><b>Activity</b>: day and night.</p>
+                    <p><b>Spear(s)</b>: lanzo, tulok, peram, spari, ebisu.</p>
+                    <p><b>Rarity</b>: common.</p>
+
+                    <p class="table-info"><b>Standing and resources</b></p>
+                    <div class="standing">
+                        <p><b>Small</b></p>
+                        <p><b>Medium</b></p>
+                        <p><b>Large</b></p>
+
+                        <p>25</p>
+                        <p>35</p>
+                        <p>50</p>
+
+                        <p>3 Fish meat</p>
+                        <p>3 Fish meat</p>
+                        <p>4 Fish meat</p>
+                        
+                        <p>2 Fish scale</p>
+                        <p>4 Fish scale</p>
+                        <p>5 Fish scale</p>
+
+                        <p>1 Fish oil</p>
+                        <p>2 Fish oil</p>
+                        <p>3 Fish oil</p>
+
+                        <p>1 Goopolla spleen</p>
+                        <p>1 Goopolla spleen</p>
+                        <p>1 Goopolla spleen</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <h3>Tralok</h3>
+                    <p><b>Biome</b>: ocean.</p>
+                    <p><b>Activity</b>: day.</p>
+                    <p><b>Spear(s)</b>: tulok, spari.</p>
+                    <p><b>Rarity</b>: uncommon.</p>
+
+                    <p class="table-info"><b>Standing and resources</b></p>
+                    <div class="standing">
+                        <p><b>Small</b></p>
+                        <p><b>Medium</b></p>
+                        <p><b>Large</b></p>
+
+                        <p>100</p>
+                        <p>125</p>
+                        <p>200</p>
+
+                        <p>2 Fish meat</p>
+                        <p>3 Fish meat</p>
+                        <p>4 Fish meat</p>
+                        
+                        <p>5 Fish scale</p>
+                        <p>7 Fish scale</p>
+                        <p>9 Fish scale</p>
+
+                        <p>1 Fish oil</p>
+                        <p>2 Fish oil</p>
+                        <p>3 Fish oil</p>
+
+                        <p>1 Tralok eyes</p>
+                        <p>1 Tralok eyes</p>
+                        <p>1 Tralok eyes</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <h3>Sharrac</h3>
+                    <p><b>Biome</b>: ocean.</p>
+                    <p><b>Activity</b>: day and night - <b>Twilight bait</b>.</p>
+                    <p><b>Spear(s)</b>: lanzo, tulok.</p>
+                    <p><b>Rarity</b>: uncommon.</p>
+
+                    <p class="table-info"><b>Standing and resources</b></p>
+                    <div class="standing">
+                        <p><b>Small</b></p>
+                        <p><b>Medium</b></p>
+                        <p><b>Large</b></p>
+
+                        <p>100</p>
+                        <p>125</p>
+                        <p>200</p>
+
+                        <p>2 Fish meat</p>
+                        <p>3 Fish meat</p>
+                        <p>4 Fish meat</p>
+                        
+                        <p>4 Fish scale</p>
+                        <p>6 Fish scale</p>
+                        <p>8 Fish scale</p>
+
+                        <p>2 Fish oil</p>
+                        <p>3 Fish oil</p>
+                        <p>4 Fish oil</p>
+
+                        <p>1 Sharrac teeth</p>
+                        <p>1 Sharrac teeth</p>
+                        <p>1 Sharrac teeth</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <h3>Karkina</h3>
+                    <p><b>Biome</b>: ocean.</p>
+                    <p><b>Activity</b>: day and night - <b>Twilight bait</b>.</p>
+                    <p><b>Spear(s)</b>: lanzo, tulok.</p>
+                    <p><b>Rarity</b>: uncommon.</p>
+
+                    <p class="table-info"><b>Standing and resources</b></p>
+                    <div class="standing">
+                        <p><b>Small</b></p>
+                        <p><b>Medium</b></p>
+                        <p><b>Large</b></p>
+
+                        <p>100</p>
+                        <p>125</p>
+                        <p>200</p>
+
+                        <p>1 Fish meat</p>
+                        <p>2 Fish meat</p>
+                        <p>3 Fish meat</p>
+                        
+                        <p>3 Fish scale</p>
+                        <p>4 Fish scale</p>
+                        <p>5 Fish scale</p>
+
+                        <p>4 Fish oil</p>
+                        <p>6 Fish oil</p>
+                        <p>8 Fish oil</p>
+
+                        <p>1 Karkina antenna</p>
+                        <p>1 Karkina antenna</p>
+                        <p>1 Karkina antenna</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <h3>Murkray</h3>
+                    <p><b>Biome</b>: ocean.</p>
+                    <p><b>Activity</b>: day and night - <b>Murkray bait</b>.</p>
+                    <p><b>Spear(s)</b>: lanzo, ebisu.</p>
+                    <p><b>Rarity</b>: rare.</p>
+
+                    <p class="table-info"><b>Standing and resources</b></p>
+                    <div class="standing">
+                        <p><b>Small</b></p>
+                        <p><b>Medium</b></p>
+                        <p><b>Large</b></p>
+
+                        <p>500</p>
+                        <p>625</p>
+                        <p>1000</p>
+
+                        <p>1 Fish meat</p>
+                        <p>2 Fish meat</p>
+                        <p>5 Fish meat</p>
+                        
+                        <p>2 Fish scale</p>
+                        <p>4 Fish scale</p>
+                        <p>6 Fish scale</p>
+
+                        <p>7 Fish oil</p>
+                        <p>8 Fish oil</p>
+                        <p>9 Fish oil</p>
+
+                        <p>1 Murkray liver</p>
+                        <p>1 Murkray liver</p>
+                        <p>1 Murkray liver</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <h3>Norg</h3>
+                    <p><b>Biome</b>: lake.</p>
+                    <p><b>Activity</b>: night - <b>Norg bait</b>.</p>
+                    <p><b>Spear(s)</b>: peram, shockprod.</p>
+                    <p><b>Rarity</b>: rare.</p>
+
+                    <p class="table-info"><b>Standing and resources</b></p>
+                    <div class="standing">
+                        <p><b>Small</b></p>
+                        <p><b>Medium</b></p>
+                        <p><b>Large</b></p>
+
+                        <p>500</p>
+                        <p>625</p>
+                        <p>1000</p>
+
+                        <p>2 Fish meat</p>
+                        <p>3 Fish meat</p>
+                        <p>4 Fish meat</p>
+                        
+                        <p>5 Fish scale</p>
+                        <p>7 Fish scale</p>
+                        <p>10 Fish scale</p>
+
+                        <p>3 Fish oil</p>
+                        <p>5 Fish oil</p>
+                        <p>6 Fish oil</p>
+
+                        <p>1 Norg brain</p>
+                        <p>1 Norg brain</p>
+                        <p>1 Norg brain</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <h3>Cuthol</h3>
+                    <p><b>Biome</b>: pond (hotspot).</p>
+                    <p><b>Activity</b>: night - <b>Cuthol bait</b>.</p>
+                    <p><b>Spear(s)</b>: lanzo.</p>
+                    <p><b>Rarity</b>: rare.</p>
+
+                    <p class="table-info"><b>Standing and resources</b></p>
+                    <div class="standing">
+                        <p><b>Small</b></p>
+                        <p><b>Medium</b></p>
+                        <p><b>Large</b></p>
+
+                        <p>500</p>
+                        <p>625</p>
+                        <p>1000</p>
+
+                        <p>5 Fish meat</p>
+                        <p>8 Fish meat</p>
+                        <p>11 Fish meat</p>
+                        
+                        <p>3 Fish scale</p>
+                        <p>4 Fish scale</p>
+                        <p>5 Fish scale</p>
+
+                        <p>2 Fish oil</p>
+                        <p>3 Fish oil</p>
+                        <p>4 Fish oil</p>
+
+                        <p>1 Cuthol tendrils</p>
+                        <p>1 Cuthol tendrils</p>
+                        <p>1 Cuthol tendrils</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <h3>Glappid</h3>
+                    <p><b>Biome</b>: ocean.</p>
+                    <p><b>Activity</b>: night - <b>Glappid bait</b>.</p>
+                    <p><b>Spear(s)</b>: peram.</p>
+                    <p><b>Rarity</b>: rare.</p>
+
+                    <p class="table-info"><b>Standing and resources</b></p>
+                    <div class="standing">
+                        <p><b>Small</b></p>
+                        <p><b>Medium</b></p>
+                        <p><b>Large</b></p>
+
+                        <p>1200</p>
+                        <p>1500</p>
+                        <p>2000</p>
+
+                        <p>4 Fish meat</p>
+                        <p>6 Fish meat</p>
+                        <p>8 Fish meat</p>
+                        
+                        <p>5 Fish scale</p>
+                        <p>7 Fish scale</p>
+                        <p>9 Fish scale</p>
+
+                        <p>3 Fish oil</p>
+                        <p>5 Fish oil</p>
+                        <p>7 Fish oil</p>
+
+                        <p>1 Seram beetle shell</p>
+                        <p>1 Seram beetle shell</p>
+                        <p>1 Seram beetle shell</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="accordion" id="vallis">
+                <h2>Orb Vallis</h2>
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" viewBox="0 0 48 48" class="svg-open">
+                    <path fill="currentColor" d="M22.5 38V25.5H10V22.5H22.5V10H25.5V22.5H38V25.5H25.5V38Z"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" viewBox="0 0 48 48" class="svg-close">
+                    <path fill="currentColor" d="M10 25.5v-3h28v3Z"/>
+                </svg>
+            </div>
+            
+            <div class="section-content open" id="vallis-content">
+                <div class="container">
+                    <h3>Eye-eye</h3>
+                    <p><b>Biome</b>: pond.</p>
+                    <p><b>Activity</b>: warm - <b>Narrow-spectrum bait</b>.</p>
+                    <p><b>Rarity</b>: uncommon.</p>
+
+                    <p class="table-info"><b>Standing and resources</b></p>
+                    <div class="standing">
+                        <p><b>Small</b></p>
+                        <p><b>Medium</b></p>
+                        <p><b>Large</b></p>
+
+                        <p>45</p>
+                        <p>60</p>
+                        <p>100</p>
+
+                        <p>3 Scrap</p>
+                        <p>4 Scrap</p>
+                        <p>5 Scrap</p>
+                        
+                        <p>1 Eye-eye rotoblade</p>
+                        <p>1 Eye-eye rotoblade</p>
+                        <p>1 Eye-eye rotoblade</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <h3>Scrubber</h3>
+                    <p><b>Biome</b>: cave.</p>
+                    <p><b>Activity</b>: cold and warm - <b>broad-spectrum bait</b>.</p>
+                    <p><b>Rarity</b>: common.</p>
+
+                    <p class="table-info"><b>Standing and resources</b></p>
+                    <div class="standing">
+                        <p><b>Small</b></p>
+                        <p><b>Medium</b></p>
+                        <p><b>Large</b></p>
+
+                        <p>35</p>
+                        <p>45</p>
+                        <p>70</p>
+
+                        <p>1 Scrap</p>
+                        <p>2 Scrap</p>
+                        <p>3 Scrap</p>
+                        
+                        <p>1 Scrubber exa brain</p>
+                        <p>1 Scrubber exa brain</p>
+                        <p>1 Scrubber exa brain</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <h3>Echowinder</h3>
+                    <p><b>Biome</b>: lake.</p>
+                    <p><b>Activity</b>: warm - <b>broad-spectrum bait</b>.</p>
+                    <p><b>Rarity</b>: common.</p>
+
+                    <p class="table-info"><b>Standing and resources</b></p>
+                    <div class="standing">
+                        <p><b>Small</b></p>
+                        <p><b>Medium</b></p>
+                        <p><b>Large</b></p>
+
+                        <p>35</p>
+                        <p>45</p>
+                        <p>70</p>
+
+                        <p>2 Scrap</p>
+                        <p>3 Scrap</p>
+                        <p>4 Scrap</p>
+                        
+                        <p>1 Echowinder anoscopic sensor</p>
+                        <p>1 Echowinder anoscopic sensor</p>
+                        <p>1 Echowinder anoscopic sensor</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <h3>Mirewinder</h3>
+                    <p><b>Biome</b>: cave.</p>
+                    <p><b>Activity</b>: warm and cold - <b>Mirewinder bait</b>.</p>
+                    <p><b>Rarity</b>: uncommon.</p>
+
+                    <p class="table-info"><b>Standing and resources</b></p>
+                    <div class="standing">
+                        <p><b>Small</b></p>
+                        <p><b>Medium</b></p>
+                        <p><b>Large</b></p>
+
+                        <p>45</p>
+                        <p>60</p>
+                        <p>100</p>
+
+                        <p>4 Scrap</p>
+                        <p>5 Scrap</p>
+                        <p>6 Scrap</p>
+                        
+                        <p>1 Mirewinder parallel biode</p>
+                        <p>1 Mirewinder parallel biode</p>
+                        <p>1 Mirewinder parallel biode</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <h3>Longwinder</h3>
+                    <p><b>Biome</b>: lake (hotspot).</p>
+                    <p><b>Activity</b>: warm - <b>Longwinder bait</b>.</p>
+                    <p><b>Rarity</b>: uncommon.</p>
+
+                    <p class="table-info"><b>Standing and resources</b></p>
+                    <div class="standing">
+                        <p><b>Small</b></p>
+                        <p><b>Medium</b></p>
+                        <p><b>Large</b></p>
+
+                        <p>200</p>
+                        <p>300</p>
+                        <p>500</p>
+
+                        <p>2 Scrap</p>
+                        <p>3 Scrap</p>
+                        <p>4 Scrap</p>
+                        
+                        <p>1 Longwinder lathe coagulant</p>
+                        <p>1 Longwinder lathe coagulant</p>
+                        <p>1 Longwinder lathe coagulant</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <h3>Brickie</h3>
+                    <p><b>Biome</b>: pond, river.</p>
+                    <p><b>Activity</b>: warm - <b>broad-spectrum bait</b>.</p>
+                    <p><b>Rarity</b>: common.</p>
+
+                    <p class="table-info"><b>Standing and resources</b></p>
+                    <div class="standing">
+                        <p><b>Small</b></p>
+                        <p><b>Medium</b></p>
+                        <p><b>Large</b></p>
+
+                        <p>35</p>
+                        <p>45</p>
+                        <p>70</p>
+
+                        <p>2 Scrap</p>
+                        <p>3 Scrap</p>
+                        <p>4 Scrap</p>
+                        
+                        <p>1 Brickie muon battery</p>
+                        <p>1 Brickie muon battery</p>
+                        <p>1 Brickie muon battery</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <h3>Tink</h3>
+                    <p><b>Biome</b>: pond, river.</p>
+                    <p><b>Activity</b>: cold - <b>broad-spectrum bait</b>.</p>
+                    <p><b>Rarity</b>: common.</p>
+
+                    <p class="table-info"><b>Standing and resources</b></p>
+                    <div class="standing">
+                        <p><b>Small</b></p>
+                        <p><b>Medium</b></p>
+                        <p><b>Large</b></p>
+
+                        <p>35</p>
+                        <p>45</p>
+                        <p>70</p>
+
+                        <p>1 Scrap</p>
+                        <p>2 Scrap</p>
+                        <p>3 Scrap</p>
+                        
+                        <p>1 Tink dissipator coil</p>
+                        <p>1 Tink dissipator coil</p>
+                        <p>1 Tink dissipator coil</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <h3>Sapcaddy</h3>
+                    <p><b>Biome</b>: lake.</p>
+                    <p><b>Activity</b>: cold - <b>broad-spectrum bait</b>.</p>
+                    <p><b>Rarity</b>: common.</p>
+
+                    <p class="table-info"><b>Standing and resources</b></p>
+                    <div class="standing">
+                        <p><b>Small</b></p>
+                        <p><b>Medium</b></p>
+                        <p><b>Large</b></p>
+
+                        <p>35</p>
+                        <p>45</p>
+                        <p>70</p>
+
+                        <p>3 Scrap</p>
+                        <p>4 Scrap</p>
+                        <p>5 Scrap</p>
+                        
+                        <p>1 Sapcaddy venedo case</p>
+                        <p>1 Sapcaddy venedo case</p>
+                        <p>1 Spacaddy venedo case</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <h3>Kriller</h3>
+                    <p><b>Biome</b>: lake.</p>
+                    <p><b>Activity</b>: warm - <b>Kriller bait</b>.</p>
+                    <p><b>Rarity</b>: uncommon.</p>
+
+                    <p class="table-info"><b>Standing and resources</b></p>
+                    <div class="standing">
+                        <p><b>Small</b></p>
+                        <p><b>Medium</b></p>
+                        <p><b>Large</b></p>
+
+                        <p>45</p>
+                        <p>60</p>
+                        <p>100</p>
+
+                        <p>1 Scrap</p>
+                        <p>2 Scrap</p>
+                        <p>3 Scrap</p>
+                        
+                        <p>1 Kriller thermal laser</p>
+                        <p>1 Kriller thermal laser</p>
+                        <p>1 Kriller thermal laser</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <h3>Recaster</h3>
+                    <p><b>Biome</b>: pond (hotspot).</p>
+                    <p><b>Activity</b>: cold - <b>Narrow-spectrum bait</b>.</p>
+                    <p><b>Rarity</b>: uncommon.</p>
+
+                    <p class="table-info"><b>Standing and resources</b></p>
+                    <div class="standing">
+                        <p><b>Small</b></p>
+                        <p><b>Medium</b></p>
+                        <p><b>Large</b></p>
+
+                        <p>45</p>
+                        <p>60</p>
+                        <p>100</p>
+
+                        <p>3 Scrap</p>
+                        <p>5 Scrap</p>
+                        <p>7 Scrap</p>
+                        
+                        <p>1 Recaster neural relay</p>
+                        <p>1 Recaster neural relay</p>
+                        <p>1 Recaster neural relay</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <h3>Tromyzon</h3>
+                    <p><b>Biome</b>: pond (hotspot).</p>
+                    <p><b>Activity</b>: cold - <b>tromyzon bait</b>.</p>
+                    <p><b>Rarity</b>: rare.</p>
+
+                    <p class="table-info"><b>Standing and resources</b></p>
+                    <div class="standing">
+                        <p><b>Small</b></p>
+                        <p><b>Medium</b></p>
+                        <p><b>Large</b></p>
+
+                        <p>200</p>
+                        <p>300</p>
+                        <p>500</p>
+
+                        <p>3 Scrap</p>
+                        <p>4 Scrap</p>
+                        <p>5 Scrap</p>
+                        
+                        <p>1 Tromyzon entroplasma</p>
+                        <p>1 Tromyzon entroplasma</p>
+                        <p>1 Tromyzon entroplasma</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <h3>Charamote</h3>
+                    <p><b>Biome</b>: cave (hotspot).</p>
+                    <p><b>Activity</b>: warm and cold (best at warm) - <b>charamote bait</b>.</p>
+                    <p><b>Rarity</b>: rare.</p>
+
+                    <p class="table-info"><b>Standing and resources</b></p>
+                    <div class="standing">
+                        <p><b>Small</b></p>
+                        <p><b>Medium</b></p>
+                        <p><b>Large</b></p>
+
+                        <p>200</p>
+                        <p>300</p>
+                        <p>500</p>
+
+                        <p>1 Scrap</p>
+                        <p>3 Scrap</p>
+                        <p>5 Scrap</p>
+                        
+                        <p>1 Charamote sagan module</p>
+                        <p>1 Charamote sagan module</p>
+                        <p>1 Charamote sagan module</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <h3>Synathid</h3>
+                    <p><b>Biome</b>: cave (hotspot).</p>
+                    <p><b>Activity</b>: warm and cold (best at warm) - <b>synathid bait</b>.</p>
+                    <p><b>Rarity</b>: rare.</p>
+
+                    <p class="table-info"><b>Standing and resources</b></p>
+                    <div class="standing">
+                        <p><b>Small</b></p>
+                        <p><b>Medium</b></p>
+                        <p><b>Large</b></p>
+
+                        <p>600</p>
+                        <p>800</p>
+                        <p>1000</p>
+
+                        <p>4 Scrap</p>
+                        <p>6 Scrap</p>
+                        <p>8 Scrap</p>
+                        
+                        <p>1 Synathid ecosynth analyzer</p>
+                        <p>1 Synathid ecosynth analyzer</p>
+                        <p>1 Synathid ecosynth analyzer</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="accordion" id="cambion">
+                <h2>Cambion Drift</h2>
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" viewBox="0 0 48 48" class="svg-open">
+                    <path fill="currentColor" d="M22.5 38V25.5H10V22.5H22.5V10H25.5V22.5H38V25.5H25.5V38Z"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" viewBox="0 0 48 48" class="svg-close">
+                    <path fill="currentColor" d="M10 25.5v-3h28v3Z"/>
+                </svg>
+            </div>
+            
+            <div class="section-content open" id="cambion-content">
+                <div class="container">
+                    <h3>Kymaeros</h3>
+                    <p><b>Biome</b>: surface.</p>
+                    <p><b>Activity</b>: fass and vome.</p>
+                    <p><b>Rarity</b>: common.</p>
+
+                    <p class="table-info"><b>Standing and resources</b></p>
+                    <div class="standing">
+                        <p><b>Small</b></p>
+                        <p><b>Medium</b></p>
+                        <p><b>Large</b></p>
+
+                        <p>2 benign infested tumor</p>
+                        <p>3 benign infested tumor</p>
+                        <p>6 benign infested tumor</p>
+
+                        <p>2 ferment bladder</p>
+                        <p>3 ferment bladder</p>
+                        <p>6 ferment bladder</p>
+                        
+                        <p>1 saturated muscle mass</p>
+                        <p>1 saturated muscle mass</p>
+                        <p>1 saturated muscle mass</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <h3>Barbisteo</h3>
+                    <p><b>Biome</b>: cave.</p>
+                    <p><b>Activity</b>: fass and vome.</p>
+                    <p><b>Rarity</b>: common.</p>
+
+                    <p class="table-info"><b>Standing and resources</b></p>
+                    <div class="standing">
+                        <p><b>Small</b></p>
+                        <p><b>Medium</b></p>
+                        <p><b>Large</b></p>
+
+                        <p>3 benign infested tumor</p>
+                        <p>4 benign infested tumor</p>
+                        <p>8 benign infested tumor</p>
+
+                        <p>3 ferment bladder</p>
+                        <p>4 ferment bladder</p>
+                        <p>6 ferment bladder</p>
+                        
+                        <p>1 dendrite blastoma</p>
+                        <p>1 dendrite blastoma</p>
+                        <p>1 dendrite blastoma</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <h3>Cryptosuctus</h3>
+                    <p><b>Biome</b>: surface.</p>
+                    <p><b>Activity</b>: fass.</p>
+                    <p><b>Rarity</b>: common.</p>
+
+                    <p class="table-info"><b>Standing and resources</b></p>
+                    <div class="standing">
+                        <p><b>Small</b></p>
+                        <p><b>Medium</b></p>
+                        <p><b>Large</b></p>
+
+                        <p>2 benign infested tumor</p>
+                        <p>4 benign infested tumor</p>
+                        <p>6 benign infested tumor</p>
+
+                        <p>2 ferment bladder</p>
+                        <p>3 ferment bladder</p>
+                        <p>4 ferment bladder</p>
+                        
+                        <p>1 pustulent cognitive nodule</p>
+                        <p>1 pustulent cognitive nodule</p>
+                        <p>1 pustulent cognitive nodule</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <h3>Amniophysi</h3>
+                    <p><b>Biome</b>: cave.</p>
+                    <p><b>Activity</b>: fass and vome.</p>
+                    <p><b>Rarity</b>: common.</p>
+
+                    <p class="table-info"><b>Standing and resources</b></p>
+                    <div class="standing">
+                        <p><b>Small</b></p>
+                        <p><b>Medium</b></p>
+                        <p><b>Large</b></p>
+
+                        <p>3 benign infested tumor</p>
+                        <p>4 benign infested tumor</p>
+                        <p>8 benign infested tumor</p>
+
+                        <p>2 ferment bladder</p>
+                        <p>3 ferment bladder</p>
+                        <p>6 ferment bladder</p>
+                        
+                        <p>1 Waxen sebum deposit</p>
+                        <p>1 Waxen sebum deposit</p>
+                        <p>1 Waxen sebum deposit</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <h3>Ostimyr</h3>
+                    <p><b>Biome</b>: surface (hotspot).</p>
+                    <p><b>Activity</b>: fass - <b>fass residue bait</b>.</p>
+                    <p><b>Rarity</b>: uncommon.</p>
+
+                    <p class="table-info"><b>Standing and resources</b></p>
+                    <div class="standing">
+                        <p><b>Basic</b></p>
+                        <p><b>Adorned</b></p>
+                        <p><b>Magnificent</b></p>
+
+                        <p>3 benign infested tumor</p>
+                        <p>4 benign infested tumor</p>
+                        <p>6 benign infested tumor</p>
+
+                        <p>2 tubercular gill system</p>
+                        <p>3 tubercular gill system</p>
+                        <p>4 tubercular gill system</p>
+
+                        <p>2 ferment bladder</p>
+                        <p>3 ferment bladder</p>
+                        <p>4 ferment bladder</p>
+                        
+                        <p>1 saturated muscle mass</p>
+                        <p>1 saturated muscle mass</p>
+                        <p>1 saturated muscle mass</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <h3>Glutinox</h3>
+                    <p><b>Biome</b>: surface.</p>
+                    <p><b>Activity</b>: vome - <b>fass residue bait</b>.</p>
+                    <p><b>Rarity</b>: uncommon.</p>
+
+                    <p class="table-info"><b>Standing and resources</b></p>
+                    <div class="standing">
+                        <p><b>Small</b></p>
+                        <p><b>Medium</b></p>
+                        <p><b>Large</b></p>
+
+                        <p>2 benign infested tumor</p>
+                        <p>4 benign infested tumor</p>
+                        <p>6 benign infested tumor</p>
+
+                        <p>2 ferment bladder</p>
+                        <p>4 ferment bladder</p>
+                        <p>6 ferment bladder</p>
+                        
+                        <p>1 sporulate sac</p>
+                        <p>1 sporulate sac</p>
+                        <p>1 sporulate sac</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <h3>Vitreospina</h3>
+                    <p><b>Biome</b>: cave.</p>
+                    <p><b>Activity</b>: fass and vome - <b>fass residue bait</b>.</p>
+                    <p><b>Rarity</b>: uncommon.</p>
+
+                    <p class="table-info"><b>Standing and resources</b></p>
+                    <div class="standing">
+                        <p><b>Basic</b></p>
+                        <p><b>Adorned</b></p>
+                        <p><b>Magnificent</b></p>
+
+                        <p>3 benign infested tumor</p>
+                        <p>4 benign infested tumor</p>
+                        <p>6 benign infested tumor</p>
+
+                        <p>1 spinal core section</p>
+                        <p>1 spinal core section</p>
+                        <p>1 spinal core section</p>
+
+                        <p>1 dendrite blastoma</p>
+                        <p>1 dendrite blastoma</p>
+                        <p>1 dendrite blastoma</p>
+
+                        <p>2 tubercular gill system</p>
+                        <p>3 tubercular gill system</p>
+                        <p>4 tubercular gill system</p>
+
+                        <p>2 ferment bladder</p>
+                        <p>3 ferment bladder</p>
+                        <p>4 ferment bladder</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <h3>Duroid</h3>
+                    <p><b>Biome</b>: cave (hotspot).</p>
+                    <p><b>Activity</b>: fass and vome - <b>vome residue bait</b>.</p>
+                    <p><b>Rarity</b>: uncommon.</p>
+
+                    <p class="table-info"><b>Standing and resources</b></p>
+                    <div class="standing">
+                        <p><b>Basic</b></p>
+                        <p><b>Adorned</b></p>
+                        <p><b>Magnificent</b></p>
+
+                        <p>2 benign infested tumor</p>
+                        <p>4 benign infested tumor</p>
+                        <p>6 benign infested tumor</p>
+
+                        <p>2 tubercular gill system</p>
+                        <p>4 tubercular gill system</p>
+                        <p>6 tubercular gill system</p>
+                        
+                        <p>2 biotic filter</p>
+                        <p>2 biotic filter</p>
+                        <p>2 biotic filter</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <h3>Chondricord</h3>
+                    <p><b>Biome</b>: cave (hotspot).</p>
+                    <p><b>Activity</b>: fass and vome - <b>vome residue bait</b>.</p>
+                    <p><b>Rarity</b>: rare.</p>
+
+                    <p class="table-info"><b>Standing and resources</b></p>
+                    <div class="standing">
+                        <p><b>Basic</b></p>
+                        <p><b>Adorned</b></p>
+                        <p><b>Magnificent</b></p>
+
+                        <p>3 benign infested tumor</p>
+                        <p>4 benign infested tumor</p>
+                        <p>8 benign infested tumor</p>
+
+                        <p>2 tubercular gill system</p>
+                        <p>3 tubercular gill system</p>
+                        <p>5 tubercular gill system</p>
+
+                        <p>2 spinal core section</p>
+                        <p>2 spinal core section</p>
+                        <p>2 spinal core section</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <h3>Lobotriscid</h3>
+                    <p><b>Biome</b>: surface.</p>
+                    <p><b>Activity</b>: vome.</p>
+                    <p><b>Rarity</b>: common.</p>
+
+                    <p class="table-info"><b>Standing and resources</b></p>
+                    <div class="standing">
+                        <p><b>Small</b></p>
+                        <p><b>Medium</b></p>
+                        <p><b>Large</b></p>
+
+                        <p>3 benign infested tumor</p>
+                        <p>4 benign infested tumor</p>
+                        <p>6 benign infested tumor</p>
+
+                        <p>3 ferment bladder</p>
+                        <p>4 ferment bladder</p>
+                        <p>6 ferment bladder</p>
+                        
+                        <p>1 parasitic tethermaw</p>
+                        <p>1 parasitic tethermaw</p>
+                        <p>1 parasitic tethermaw</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <h3>Myxostomata</h3>
+                    <p><b>Biome</b>: cave (hotspot).</p>
+                    <p><b>Activity</b>: fass and vome - <b>need processed vome residue</b>.</p>
+                    <p><b>Rarity</b>: rare.</p>
+
+                    <p class="table-info"><b>Standing and resources</b></p>
+                    <div class="standing">
+                        <p><b>Small</b></p>
+                        <p><b>Medium</b></p>
+                        <p><b>Large</b></p>
+
+                        <p>2 benign infested tumor</p>
+                        <p>4 benign infested tumor</p>
+                        <p>6 benign infested tumor</p>
+
+                        <p>4 tubercular gill system</p>
+                        <p>6 tubercular gill system</p>
+                        <p>10 tubercular gill system</p>
+                        
+                        <p>2 cranial foremount</p>
+                        <p>2 cranial foremount</p>
+                        <p>2 cranial foremount</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <h3>Aquapulmo</h3>
+                    <p><b>Biome</b>: surface (hotspot).</p>
+                    <p><b>Activity</b>: vome - <b>need processed fass residue</b>.</p>
+                    <p><b>Rarity</b>: rare.</p>
+
+                    <p class="table-info"><b>Standing and resources</b></p>
+                    <div class="standing">
+                        <p><b>Basic</b></p>
+                        <p><b>Adorned</b></p>
+                        <p><b>Magnificent</b></p>
+
+                        <p>2 benign infested tumor</p>
+                        <p>4 benign infested tumor</p>
+                        <p>8 benign infested tumor</p>
+
+                        <p>1 biotic filter</p>
+                        <p>1 biotic filter</p>
+                        <p>1 biotic filter</p>
+
+                        <p>1 pustulent cognitive nodule</p>
+                        <p>1 pustulent cognitive nodule</p>
+                        <p>2 pustulent cognitive nodule</p>
+
+                        <p>1 tubercular gill system</p>
+                        <p>2 tubercular gill system</p>
+                        <p>2 tubercular gill system</p>
+
+                        <p>2 ferment bladder</p>
+                        <p>4 ferment bladder</p>
+                        <p>6 ferment bladder</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <h3>Flagellocanth</h3>
+                    <p><b>Biome</b>: surface (hotspot).</p>
+                    <p><b>Best spot</b>: <b>The Actuary's Pride</b></p>
+                    <p><b>Activity</b>: fass and vome - <b>processed fass residue</b>.</p>
+                    <p><b>Rarity</b>: rare.</p>
+
+                    <p class="table-info"><b>Standing and resources</b></p>
+                    <div class="standing">
+                        <p><b>Small</b></p>
+                        <p><b>Medium</b></p>
+                        <p><b>Large</b></p>
+
+                        <p>3 benign infested tumor</p>
+                        <p>5 benign infested tumor</p>
+                        <p>8 benign infested tumor</p>
+
+                        <p>3 ferment bladder</p>
+                        <p>5 ferment bladder</p>
+                        <p>6 ferment bladder</p>
+                        
+                        <p>1 ocular stem-root</p>
+                        <p>1 ocular stem-root</p>
+                        <p>1 ocular stem-root</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <span class="footer-copyright">
+            Digital Extremes Ltd, Warframe and the logo Warframe are registered trademarks. iFrame has no direct links with Warframe Ltd or Digital Extremes. All trademarks are the property of their respective owners and all rights are reserved worldwide. All artwork, screenshots, characters or other recognizable features of the intellectual property relating to these trademarks are likewise the intellectual property of Digital Extremes Ltd.
+        </span>
+        
+        <span class="footer-copyright">
+            Some of the features of this website are using <a href="https://docs.warframestat.us/" target="_blank" rel="noopener">Warframe API</a>, developed by Warframe community.
+        </span>
+
+        <span class="footer-copyright">
+            &copy;2022 iFrame. All rights reserved.
+        </span>
+    </footer>
+
+    <script src="config.js" type="module"></script>
+    <script src="conservation.js" type="module"></script>
+</body>
+</html>

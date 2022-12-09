@@ -1,0 +1,309 @@
+:root {
+    /* ----- Default 16px ----- */
+        /* 64px */
+        --fs-xxxlg: 4rem;
+        /* 40px */
+        --fs-xxlg: 2.5rem;
+        /* 32px */
+        --fs-xlg: 2rem;
+        /* 24px */
+        --fs-lg: 1.5rem;
+        /* 16px */
+        --fs-default: 1rem;
+        /* 15px */
+        --fs-sm: 0.9375rem;
+        /* 12px */
+        --fs-xsm: 0.75rem;
+    /* ------------------------ */
+
+    /* ----- Spacing ----- */
+        --spc-xxxlg: 32em;
+        --spc-xxlg: 16em;
+        --spc-xlg: 8em;
+        --spc-lg: 4em;
+        --spc-md: 2em;
+        --spc-default: 1em;
+        --spc-sm: 0.5em;
+        --spc-xsm: 0.25em;
+    /* ------------------- */
+
+    /* ----- Colors ----- */
+        --primary: #5b2fec;
+        --secondary: #e3f6f5;
+        --tertiary: #bae8e8;
+        --quaternary: #2c698d;
+        --alert: #E53847;
+
+        --gray: hsl(0, 0%, 97%);
+
+        --black: hsl(0, 0%, 0%);
+        --black-75: hsla(0, 0%, 0%, 75%);
+        --black-50: hsla(0, 0%, 0%, 50%);
+        --black-25: hsla(0, 0%, 0%, 25%);
+        --black-10: hsla(0, 0%, 0%, 10%);
+
+        --white: hsla(0, 0%, 100%, 1);
+
+        --hover-color: hsl(190, 70%, 50%);
+        --active-color: #5b2fec;
+    /* ------------------ */
+
+    --color: var(--black);
+    --theme: var(--white);
+    --shadow: var(--black-10);
+}
+
+/* ---------- CSS Reset ---------- */
+    /* Box sizing rules */
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Set core root defaults */
+    html:focus-within {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        text-rendering: optimizeSpeed;
+        line-height: 1.5;
+    }
+
+    /* A elements that don't have a class get default styles */
+    a:not([class]) {
+        text-decoration-skip-ink: auto;
+    }
+
+    /* Make images easier to work with */
+    img,
+    picture {
+        max-width: 100%;
+        display: block;
+    }
+
+    /* Inherit fonts for inputs and buttons */
+    input,
+    button,
+    textarea,
+    select {
+        font: inherit;
+    }
+
+    /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+    @media (prefers-reduced-motion: reduce) {
+        html:focus-within {
+            scroll-behavior: auto;
+        }
+      
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+    }
+/* ------------------------------- */
+
+body {
+    color: var(--color);
+    background-color: var(--theme);
+}
+
+/* ----------- Header ----------- */
+    .header-nav {
+        z-index: 1;
+    }
+
+    .nav-site {
+        display: flex;
+        align-items: center;
+        gap: var(--spc-md);
+    }
+
+    #nav-btn {
+        cursor: pointer;
+        width: 3rem;
+        height: 3rem;
+        margin-left: var(--spc-default);
+        border: none;
+        color: var(--color);
+        background-color: transparent;
+    }
+
+    #nav-btn:hover,
+    #nav-btn:focus-visible {
+        color: var(--hover-color);
+    }
+
+    #nav-btn svg,
+    #close-modal svg,
+    .nav-logo svg {
+        display: block;
+        margin: auto;
+    }
+
+    .nav-logo {
+        color: var(--primary);
+    }
+
+    .nav-logo:hover {
+        color: var(--hover-color);
+    }
+
+    .nav-bar {
+        display: none;
+        gap: var(--spc-default);
+        list-style: none;
+    }
+
+    .nav-bar a {
+        color: var(--color);
+        text-decoration: none;
+    }
+
+    .nav-bar a:hover,
+    .nav-bar a:focus-visible {
+        color: var(--hover-color);
+    }
+
+    .nav-bar a.active {
+        color: var(--active-color);
+    }
+
+    #modal-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, var(--black-10), var(--black-25));
+
+        padding-top: 3em;
+        z-index: 1;
+        display: none;
+    }
+
+    #modal-nav[data-state="opened"] {
+        display: block;
+    }
+
+    .modal-content {
+        max-width: 95%;
+        padding: 1em;
+        margin: auto;
+        border: none;
+        background-color: var(--theme);
+        outline-offset: -0.5em;
+        box-shadow: 0 0 0.5em var(--black-50);
+        position: relative;
+    }
+
+    .modal-nav-bar a {
+        color: var(--color);
+        text-decoration: none;
+    }
+
+    .modal-nav-bar a:hover,
+    .modal-nav-bar a:focus-visible {
+        color: var(--hover-color);
+    }
+
+    .modal-nav-bar a.active {
+        color: var(--active-color);
+    }
+
+    #close-modal {
+        position: absolute;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+        width: 3rem;
+        height: 3rem;
+        border: none;
+        color: var(--color);
+        background-color: var(--theme);
+    }
+
+    #close-modal:hover,
+    #close-modal:focus-visible {
+        color: var(--hover-color);
+    }
+
+    .modal-nav-bar {
+        display: grid;
+        justify-content: center;
+        gap: var(--spc-xsm);
+
+        list-style: none;
+    }
+
+    .modal-nav-bar li {
+        text-align: center;
+        min-width: calc(100vw - 6rem);
+    }
+
+    .modal-nav-bar li:not(:last-child) {
+        border-bottom: 1px solid lightgray;
+    }
+/* ------------------------------ */
+
+/* ---------- main ---------- */
+    section {
+        margin-bottom: var(--spc-md);
+    }
+/* -------------------------- */
+
+/* ------------ Footer ------------ */
+    footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: var(--spc-md);
+
+        font-size: clamp(var(--fs-xsm), 1vw + 0.5rem, var(--fs-default));
+        color: var(--color);
+        background-color: var(--gray);
+        min-height: 10rem;
+
+        padding-top: var(--spc-lg);
+        padding-bottom: var(--spc-lg);
+    }
+
+    .footer-copyright {
+        max-width: 80ch;
+        line-height: 1.7;
+        padding-left: var(--spc-default);
+        padding-right: var(--spc-default);
+    }
+/* -------------------------------- */
+
+/* ------------ Tablet (700px) ------------ */
+    @media (min-width: 43.75em) and (min-height:  25em) {
+        /* --------- header --------- */
+            .nav-site {
+                flex-direction: column;
+                justify-content: center;
+                gap: initial;
+                
+                padding-top: var(--spc-default);
+                padding-bottom: var(--spc-default);
+            }
+
+            #nav-btn,
+            #modal-nav[data-state="opened"] {
+                display: none;
+            }
+
+            .nav-bar {
+                display: flex;
+            }
+        /* -------------------------- */
+    }
+/* ---------------------------------------- */

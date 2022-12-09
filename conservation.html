@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find and protect vital species of animals located in different lands.">
+    <meta name="keywords" content="Warframe, information, conservation, animals, Plains of Eidolon, Orb Vallis, Cambion Drift">
+    <meta name="author" content="Luiz Felipe A. K.">
+
+    <title>iFrame | Conservation</title>
+
+    <link rel="icon" sizes="48x48" href="assets/imgs/favicon.ico">
+    
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="conservation.css">
+</head>
+<body>
+    <header class="header-nav">
+        <nav>
+            <div class="nav-site">
+                <button id="nav-btn" aria-controls="modal-nav" aria-label="Navigation menu" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" focusable="false" aria-hidden="true" width="2rem">
+                        <path fill="currentColor" d="M6 36V33H42V36ZM6 25.5V22.5H42V25.5ZM6 15V12H42V15Z"/>
+                    </svg>
+                </button>
+                
+                <a href="index.html" class="nav-logo" aria-label="Home page">
+                    <svg version="1.1" viewBox="0 0 500 125" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true" width="6rem">
+                        <path fill="currentColor" d="m12.77 65.09v-52.5h20v105h-20zm45 0v-52.5h52v20h-32v22h27v20h-27v43h-20zm70 0v-52.5h23.462c27.192 0 31.13 0.84565 38.62 8.2945 6.519 6.483 9.3162 13.497 9.2615 23.223-0.0709 12.61-5.8808 22.659-15.908 27.513-2.44 1.1812-4.4364 2.3186-4.4364 2.5275 0 0.32208 10.445 19.152 21.185 38.192l2.9615 5.25h-22.991l-20.777-40.5-11.378-0.59981v41.1h-20zm42.302-8.5669c7.7961-2.1649 10.537-13.722 4.7824-20.167l-2.9156-3.2658-24.169-0.6675v25.168l9.25-6e-3c5.0875-3e-3 10.961-0.48068 13.052-1.0614zm40.016 57.817c0.73952-1.7875 10.708-26.312 22.153-54.5s21.123-51.25 21.507-51.25c0.91199 0 11.33 25.254 43.007 104.25l1.9047 4.75h-22.621l-2.1958-6.0223-2.1958-6.0223-36.211 0.54464-3.8316 11.5h-22.86zm53.516-28.574c-0.18333-0.45346-2.3572-6.7535-4.8308-14s-4.7282-13.176-5.0102-13.176c-0.43182 0-8.8285 22.869-9.8157 26.734-0.24501 0.9592 2.1368 1.2658 9.8333 1.2658 5.5862 0 10.007-0.37102 9.8233-0.82448zm51.167-21.676v-53.5h2.897c2.3464 0 4.1026 1.378 9.2397 7.25 3.4885 3.9875 12.389 14 19.778 22.25s13.961 15.588 14.603 16.307c0.9283 1.0389 5.5233-3.5277 22.388-22.25 18.537-20.578 21.592-23.557 24.157-23.557h2.9367v107h-21v-29.5c0-16.225-0.1608-29.5-0.35734-29.5-0.41006 0-18.79 18.749-23.528 24l-3.1579 3.5-13.228-13.772c-7.2755-7.5747-13.566-13.762-13.978-13.75-0.4125 0.0122-0.75 13.297-0.75 29.522v29.5h-20zm120 1v-52.5h52v20h-32v22h28v20h-28v22h34v21h-54z"/>
+                    </svg>
+                </a>
+                
+                <ul class="nav-bar">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a class="active" href="conservation.html">Conservation</a>
+                    </li>
+                    <li>
+                        <a href="fishing.html">Fishing</a>
+                    </li>
+                    <li>
+                        <a href="mining.html">Mining</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="modal-nav" data-state="closed" role="dialog">
+                <div class="modal-content">
+                    <ul class="modal-nav-bar">
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a class="active" href="conservation.html">Conservation</a>
+                        </li>
+                        <li>
+                            <a href="fishing.html">Fishing</a>
+                        </li>
+                        <li>
+                            <a href="mining.html">Mining</a>
+                        </li>
+                    </ul>
+
+                    <button id="close-modal" aria-label="Close modal">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" focusable="false" aria-hidden="true" width="2rem">
+                            <path fill="currentColor" d="m12.45 37.65-2.1-2.1L21.9 24 10.35 12.45l2.1-2.1L24 21.9l11.55-11.55 2.1 2.1L26.1 24l11.55 11.55-2.1 2.1L24 26.1Z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1 hidden>Conservation</h1>
+
+        <section class="section">
+            <div class="accordion" id="plains">
+                <h2>Plains of Eidolon</h2>
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" viewBox="0 0 48 48" class="svg-open">
+                    <path fill="currentColor" d="M22.5 38V25.5H10V22.5H22.5V10H25.5V22.5H38V25.5H25.5V38Z"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" viewBox="0 0 48 48" class="svg-close">
+                    <path fill="currentColor" d="M10 25.5v-3h28v3Z"/>
+                </svg>
+            </div>
+            
+            <div class="section-content open" id="plains-content">
+                <div class="container">
+                    <img src="assets/imgs/conservation/plains/plains-kuaka.webp">
+                    <h3>Plains kuaka</h3>
+                    <p>Common animal found in all parts of the Plains during the day.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+
+                        <p>400</p>
+                        <p>300</p>
+                        <p>200</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/plains/ashen-kuaka.webp">
+                    <h3>Ashen kuaka</h3>
+                    <p>Animal can be found anywhere in the Plains, it hates light, so it appears during the night more frequently.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+
+                        <p>600</p>
+                        <p>450</p>
+                        <p>300</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/plains/ghost-kuaka.webp">
+                    <h3>Ghost kuaka</h3>
+                    <p>Rare animal that can be found anywhere in the Plains, it appears to be more frequent during the night.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+
+                        <p>1200</p>
+                        <p>900</p>
+                        <p>600</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/plains/common-condroc.webp">
+                    <h3>Common condroc</h3>
+                    <p>This animals appears in all areas in the Plains during the day.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+
+                        <p>800</p>
+                        <p>600</p>
+                        <p>400</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/plains/rogue-condroc.webp">
+                    <h3>Rogue condroc</h3>
+                    <p>Uncommon animal that normally appears during the day close to dead bodies of grineer.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+
+                        <p>1200</p>
+                        <p>900</p>
+                        <p>600</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/plains/emperor-condroc.webp">
+                    <h3>Emperor condroc</h3>
+                    <p>Rare animal that can appear close to the entrance of Cetus during the day.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+
+                        <p>1800</p>
+                        <p>1350</p>
+                        <p>900</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/plains/coastal-mergoo.webp">
+                    <h3>Coastal mergoo</h3>
+                    <p>Animal found near to large bodies of water in the Plains during the day.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+
+                        <p>1200</p>
+                        <p>900</p>
+                        <p>600</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/plains/woodland-mergoo.webp">
+                    <h3>Woodland mergoo</h3>
+                    <p>Rare animal found near to large bodies of water in the Plains during the day, his plumage contrast with the grass making them difficult to locate.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+
+                        <p>2400</p>
+                        <p>1800</p>
+                        <p>1200</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/plains/splendid-mergoo.webp">
+                    <h3>Splendid mergoo</h3>
+                    <p>Very rare mergoo, just like the others can be found near large bodies of water.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+
+                        <p>3600</p>
+                        <p>2700</p>
+                        <p>1800</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/plains/ostia-vasca-kavat.webp">
+                    <h3>Ostia vasca kavat</h3>
+                    <p>Common animal found only during the night time.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+
+                        <p>500</p>
+                        <p>375</p>
+                        <p>250</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/plains/bau-vasca-kavat.webp">
+                    <h3>Bau vasca kavat</h3>
+                    <p>Rare subspecies of kavat, nocturnal.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+
+                        <p>1000</p>
+                        <p>750</p>
+                        <p>500</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/plains/nephil-vasca-kavat.webp">
+                    <h3>Nephil vasca kavat</h3>
+                    <p>Very rare kavat, just like the others can be found during night time.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+
+                        <p>1500</p>
+                        <p>1125</p>
+                        <p>750</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="accordion" id="vallis">
+                <h2>Orb Vallis</h2>
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" viewBox="0 0 48 48" class="svg-open">
+                    <path fill="currentColor" d="M22.5 38V25.5H10V22.5H22.5V10H25.5V22.5H38V25.5H25.5V38Z"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" viewBox="0 0 48 48" class="svg-close">
+                    <path fill="currentColor" d="M10 25.5v-3h28v3Z"/>
+                </svg>
+            </div>
+            
+            <div class="section-content open" id="vallis-content">
+                <div class="container">
+                    <img src="assets/imgs/conservation/vallis/sunny-pobber.webp">
+                    <h3>Sunny pobber</h3>
+                    <p>Common animal normally found in groups, they are very skittish animals.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+
+                        <p>400</p>
+                        <p>300</p>
+                        <p>200</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/vallis/delicate-pobber.webp">
+                    <h3>Delicate pobber</h3>
+                    <p>Rare subspecies of pobber.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+
+                        <p>600</p>
+                        <p>450</p>
+                        <p>300</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/vallis/subterranean-pobber.webp">
+                    <h3>Subterranean pobber</h3>
+                    <p>Very rare pobber, lives underground to avoid predators.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+
+                        <p>800</p>
+                        <p>600</p>
+                        <p>400</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/vallis/white-breasted-virmink.webp">
+                    <h3>White breasted virmink</h3>
+                    <p>Common animal, likes rocky landscapes and hunts pobber.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+
+                        <p>600</p>
+                        <p>450</p>
+                        <p>300</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/vallis/dusky-headed-virmink.webp">
+                    <h3>Dusky headed virmink</h3>
+                    <p>Rare subspecies of virmink.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+
+                        <p>800</p>
+                        <p>600</p>
+                        <p>400</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/vallis/red-crested-virmink.webp">
+                    <h3>Red crested virmink</h3>
+                    <p>Very rare virmink.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+
+                        <p>1000</p>
+                        <p>750</p>
+                        <p>500</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/vallis/flossy-sawgaw.webp">
+                    <h3>Flossy sawgaw</h3>
+                    <p>Common animal that normally can be found on top of giant mushrooms.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+
+                        <p>800</p>
+                        <p>600</p>
+                        <p>400</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/vallis/alpine-monitor-sawgaw.webp">
+                    <h3>Alpine monitor sawgaw</h3>
+                    <p>Rare subspecies of sawgaw.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+
+                        <p>1200</p>
+                        <p>900</p>
+                        <p>600</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/vallis/frogmouthed-sawgaw.webp">
+                    <h3>Frogmouthed sawgaw</h3>
+                    <p>Very rare sawgaw.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+
+                        <p>1800</p>
+                        <p>1350</p>
+                        <p>900</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/vallis/spotted-bolarola.webp">
+                    <h3>Spotted bolarola</h3>
+                    <p>Common animal that has armoured plates, his only soft spot is the belly.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+
+                        <p>1000</p>
+                        <p>750</p>
+                        <p>500</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/vallis/black-banded-bolarola.webp">
+                    <h3>Black-banded bolarola</h3>
+                    <p>Rare bolarola.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+
+                        <p>1500</p>
+                        <p>1125</p>
+                        <p>750</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/vallis/thorny-bolarola.webp">
+                    <h3>Thorny bolarola</h3>
+                    <p>Very rare bolarola, his armoured plates evolved into thorns to give extra protection.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+
+                        <p>800</p>
+                        <p>600</p>
+                        <p>400</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/vallis/dappled-horrasque.webp">
+                    <h3>Dappled horrasque</h3>
+                    <p>Common horrasque usually hide underground exposing their heads only, they expose their whole body if used lure.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+
+                        <p>1200</p>
+                        <p>900</p>
+                        <p>600</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/vallis/swimmer-horrasque.webp">
+                    <h3>Swimmer horrasque</h3>
+                    <p>Rare horrasque that can't swim properly.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+
+                        <p>2400</p>
+                        <p>1800</p>
+                        <p>1200</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/vallis/horrasque-stormer.webp">
+                    <h3>Horrasque stormer</h3>
+                    <p>Very rare subspecies that almost got extinct.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+
+                        <p>3600</p>
+                        <p>2700</p>
+                        <p>1800</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/vallis/sentinel-stover.webp">
+                    <h3>Sentinel stover</h3>
+                    <p>Common stover that usually appear in caves, they will attack instead of fleeing.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+
+                        <p>1600</p>
+                        <p>1200</p>
+                        <p>800</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/vallis/fuming-dax-stover.webp">
+                    <h3>Fuming dax stover</h3>
+                    <p>Rare subspecies that often intimidates other stovers.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p>3200</p>
+                        <p>2400</p>
+                        <p>1600</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/vallis/fire-veined-stover.webp">
+                    <h3>Fire-veined stover</h3>
+                    <p>Very rare subspecies that is considered majestic.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+
+                        <p>6400</p>
+                        <p>4800</p>
+                        <p>3200</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/vallis/brindle-kubrodon.webp">
+                    <h3>Brindle kubrodon</h3>
+                    <p>Common kubrodon is an apex predator, it will attack on sight and is resistant to warframe abilities.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+
+                        <p>2000</p>
+                        <p>1500</p>
+                        <p>1000</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/vallis/vallis-kubrodon.webp">
+                    <h3>Vallis kubrodon</h3>
+                    <p>Rare subspecies of kubrodon is only found in Orb Vallis.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+
+                        <p>4000</p>
+                        <p>3000</p>
+                        <p>2000</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/vallis/kubrodon-incarnadine.webp">
+                    <h3>Kubrodon incarnadine</h3>
+                    <p>Very rare subspecies, it has an malevolence behavior, this animal don't kill only for survival.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+
+                        <p>8000</p>
+                        <p>6000</p>
+                        <p>4000</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="accordion" id="cambion">
+                <h2>Cambion Drift</h2>
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" viewBox="0 0 48 48" class="svg-open">
+                    <path fill="currentColor" d="M22.5 38V25.5H10V22.5H22.5V10H25.5V22.5H38V25.5H25.5V38Z"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" viewBox="0 0 48 48" class="svg-close">
+                    <path fill="currentColor" d="M10 25.5v-3h28v3Z"/>
+                </svg>
+            </div>
+            
+            <div class="section-content open" id="cambion-content">
+                <div class="container">
+                    <img src="assets/imgs/conservation/cambion/burrowing-cryptilex.webp">
+                    <h3>Burrowing cryptilex</h3>
+                    <p>Common animal normally found in <b>Catabolic Gutter</b>.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+
+                        <p>3 tags</p>
+                        <p>2 tags</p>
+                        <p>1 tag</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/cambion/septic-cryptilex.webp">
+                    <h3>Septic cryptilex</h3>
+                    <p>Rare subspecies of cryptilex.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+                        
+                        <p>3 tags</p>
+                        <p>2 tags</p>
+                        <p>1 tag</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/cambion/caustic-cryptilex.webp">
+                    <h3>Caustic cryptilex</h3>
+                    <p>Very rare animal.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+                        
+                        <p>3 tags</p>
+                        <p>2 tags</p>
+                        <p>1 tag</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/cambion/sly-vulpaphyla.webp">
+                    <h3>Sly vulpaphyla</h3>
+                    <p>Common animal, usually travel in packs.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+
+                        <p>3 tags</p>
+                        <p>2 tags</p>
+                        <p>1 tag</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/cambion/crescent-vulpaphyla.webp">
+                    <h3>Crescent vulpaphyla</h3>
+                    <p>Rare subspecies of vulpaphylas, can only be found in <b>Vome</b>.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+                        
+                        <p>3 tags</p>
+                        <p>2 tags</p>
+                        <p>1 tag</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/cambion/panzer-vulpaphyla.webp">
+                    <h3>Panzer vulpaphyla</h3>
+                    <p>Another rare animal, this one subspecies only appears in <b>Fass</b>.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+                        
+                        <p>3 tags</p>
+                        <p>2 tags</p>
+                        <p>1 tag</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/cambion/vizier-predasite.webp">
+                    <h3>Vizier predasite</h3>
+                    <p>Common animal resistant to warframe abilities.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+
+                        <p>3 tags</p>
+                        <p>2 tags</p>
+                        <p>1 tag</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/cambion/pharaoh-predasite.webp">
+                    <h3>Pharaoh predasite</h3>
+                    <p>Rare subspecies of predasites, can only be found in <b>Fass</b>.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+                        
+                        <p>3 tags</p>
+                        <p>2 tags</p>
+                        <p>1 tag</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/cambion/medjay-predasite.webp">
+                    <h3>Medjay predasite</h3>
+                    <p>Another rare animal, this one subspecies only appears in <b>Vome</b>, unless used a pheremone gland.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+                        
+                        <p>3 tags</p>
+                        <p>2 tags</p>
+                        <p>1 tag</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/cambion/common-avichaea.webp">
+                    <h3>Common avichaea</h3>
+                    <p>Common animal difficult to capture since its a flying species.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+
+                        <p>3 tags</p>
+                        <p>2 tags</p>
+                        <p>1 tag</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/cambion/sporule-avichaea.webp">
+                    <h3>Sporule avichaea</h3>
+                    <p>Rare subspecies of avichaea, can only be found in <b>Vome</b>.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+                        
+                        <p>3 tags</p>
+                        <p>2 tags</p>
+                        <p>1 tag</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/cambion/viscid-avichaea.webp">
+                    <h3>Viscid avichaea</h3>
+                    <p>Another rare animal, this one subspecies only appears in <b>Fass</b>.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+                        
+                        <p>3 tags</p>
+                        <p>2 tags</p>
+                        <p>1 tag</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/cambion/green-velocipod.webp">
+                    <h3>Green velocipod</h3>
+                    <p>Common animal that can be found in high altitudes or close to waterways, have no echo-lure for this animal.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+
+                        <p>3 tags</p>
+                        <p>2 tags</p>
+                        <p>1 tag</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/cambion/purple-velocipod.webp">
+                    <h3>Purple velocipod</h3>
+                    <p>Rare subspecies of velocipods.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+                        
+                        <p>3 tags</p>
+                        <p>2 tags</p>
+                        <p>1 tag</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/cambion/white-velocipod.webp">
+                    <h3>White velocipod</h3>
+                    <p>Very rare animal.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+                        
+                        <p>3 tags</p>
+                        <p>2 tags</p>
+                        <p>1 tag</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/cambion/umber-undazoa.webp">
+                    <h3>Umber undazoa</h3>
+                    <p>Common animal found in cambion drift.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+
+                        <p>3 tags</p>
+                        <p>2 tags</p>
+                        <p>1 tag</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/cambion/vaporous-undazoa.webp">
+                    <h3>Vaporous undazoa</h3>
+                    <p>Rare subspecies of undazoa, can only be found in <b>Fass</b>.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+                        
+                        <p>3 tags</p>
+                        <p>2 tags</p>
+                        <p>1 tag</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/cambion/howler-undazoa.webp">
+                    <h3>Howler undazoa</h3>
+                    <p>Very rare animal, this one subspecies only appears in <b>Vome</b>.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+                        
+                        <p>3 tags</p>
+                        <p>2 tags</p>
+                        <p>1 tag</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/cambion/amethyst-nexifera.webp">
+                    <h3>Amethyst nexifera</h3>
+                    <p>Common animal found inside caves and hanging on the ceiling, no echo-lure for this one.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+
+                        <p>3 tags</p>
+                        <p>2 tags</p>
+                        <p>1 tag</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/cambion/viridian-nexifera.webp">
+                    <h3>Viridian nexifera</h3>
+                    <p>Rare subspecies of nexifera.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+                        
+                        <p>3 tags</p>
+                        <p>2 tags</p>
+                        <p>1 tag</p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src="assets/imgs/conservation/cambion/scarlet-nexifera.webp">
+                    <h3>Scarlet nexifera</h3>
+                    <p>Very rare subspecies of nexifera.</p>
+                    <p class="table-info"><b>Standing points</b></p>
+                    <div class="standing">
+                        <p><b>Perfect</b></p>
+                        <p><b>Good</b></p>
+                        <p><b>Bad</b></p>
+                        
+                        <p>3 tags</p>
+                        <p>2 tags</p>
+                        <p>1 tag</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <span class="footer-copyright">
+            Digital Extremes Ltd, Warframe and the logo Warframe are registered trademarks. iFrame has no direct links with Warframe Ltd or Digital Extremes. All trademarks are the property of their respective owners and all rights are reserved worldwide. All artwork, screenshots, characters or other recognizable features of the intellectual property relating to these trademarks are likewise the intellectual property of Digital Extremes Ltd.
+        </span>
+        
+        <span class="footer-copyright">
+            Some of the features of this website are using <a href="https://docs.warframestat.us/" target="_blank" rel="noopener">Warframe API</a>, developed by Warframe community.
+        </span>
+
+        <span class="footer-copyright">
+            &copy;2022 iFrame. All rights reserved.
+        </span>
+    </footer>
+
+    <script src="config.js" type="module"></script>
+    <script src="conservation.js" type="module"></script>
+</body>
+</html>

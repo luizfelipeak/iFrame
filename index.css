@@ -1,0 +1,132 @@
+/* ----- Utility class ----- */
+    .section h2 {
+        text-align: center;
+    }
+
+    .section-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 14rem);
+        justify-content: center;
+        justify-items: center;
+        gap: var(--spc-default);
+    }
+
+    .container {
+        display: grid;
+        gap: var(--spc-sm);
+        position: relative;
+    }
+
+    .skeleton {
+        position: absolute;
+        top: 0.1em;
+        right: 0.5em;
+        
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        animation: skeletonLoading 1s linear infinite alternate;
+    }
+
+    .skeleton-text {
+        width: 10rem;
+        height: 1.5rem;
+        border-radius: 0.25rem;
+        animation: skeletonLoading 1s linear infinite alternate;
+    }
+
+    @keyframes skeletonLoading {
+        0% {
+            background-color: hsl(0, 0%, 90%);
+        }
+
+        100% {
+            background-color: transparent;
+        }
+    }
+
+    .auto-layout {
+        grid-template-columns: auto;
+        padding-inline: var(--spc-default);
+    }
+
+    .full-size {
+        justify-items: initial;
+    }
+/* ------------------------- */
+
+/* ----- Main section ----- */
+    #svg-earth-day,
+    #svg-earth-night,
+    #svg-poe-day,
+    #svg-poe-night,
+    #svg-vallis-warm,
+    #svg-vallis-cold,
+    #cambion-fass,
+    #cambion-vome {
+        position: absolute;
+        top: 0.1em;
+        right: 0.5em;
+        display: none;
+    }
+
+    #svg-earth-day,
+    #svg-poe-day {
+        color: hsl(30, 100%, 70%);
+    }
+
+    #svg-earth-night,
+    #svg-poe-night {
+        color: hsl(0, 0%, 80%);
+    }
+
+    #svg-vallis-warm {
+        color: hsl(20, 100%, 40%);
+    }
+
+    #svg-vallis-cold {
+        color: hsl(0, 0%, 80%);
+    }
+
+    #cambion-fass,
+    #cambion-vome {
+        width: 3rem;
+        height: 3rem;
+    }
+/* ------------------------ */
+
+/* ----- Alerts and void fissures ----- */
+    .buttons-container {
+        display: grid;
+        gap: var(--spc-default);
+        margin-block: var(--spc-default);
+    }
+
+    .tiers-container,
+    .type-container {
+        display: flex;
+        justify-content: center;
+        gap: var(--spc-default);
+    }
+
+    .tiers-container button,
+    .type-container button {
+        cursor: pointer;
+        padding: var(--spc-sm);
+        border: none;
+        background-color: transparent;
+    }
+
+    .tiers-container button.active,
+    .type-container button.active {
+        cursor: not-allowed;
+        color: var(--white);
+        background-color: var(--primary);
+        border-radius: var(--spc-md);
+    }
+
+    #alerts .container > p,
+    #fissures .container > p {
+        text-align: center;
+    }
+/* ------------------------------------ */

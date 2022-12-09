@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find information about the planets cycles, active void fissures, locations of animals for conservation and best spots for fishing and mining.">
+    <meta name="keywords" content="Warframe, information, Void fissure, Plains of Eidolon, Orb Vallis, Cambion Drift">
+    <meta name="author" content="Luiz Felipe A. K.">
+
+    <title>iFrame | Home</title>
+
+    <link rel="icon" sizes="48x48" href="assets/imgs/favicon.ico">
+    
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+    <header class="header-nav">
+        <nav>
+            <div class="nav-site">
+                <button id="nav-btn" aria-controls="modal-nav" aria-label="Navigation menu" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="2rem" viewBox="0 0 48 48" focusable="false" aria-hidden="true">
+                        <path fill="currentColor" d="M6 36V33H42V36ZM6 25.5V22.5H42V25.5ZM6 15V12H42V15Z"/>
+                    </svg>
+                </button>
+                
+                <a href="index.html" class="nav-logo" aria-label="Home page">
+                    <svg version="1.1" viewBox="0 0 500 125" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true" width="6rem">
+                        <path fill="currentColor" d="m12.77 65.09v-52.5h20v105h-20zm45 0v-52.5h52v20h-32v22h27v20h-27v43h-20zm70 0v-52.5h23.462c27.192 0 31.13 0.84565 38.62 8.2945 6.519 6.483 9.3162 13.497 9.2615 23.223-0.0709 12.61-5.8808 22.659-15.908 27.513-2.44 1.1812-4.4364 2.3186-4.4364 2.5275 0 0.32208 10.445 19.152 21.185 38.192l2.9615 5.25h-22.991l-20.777-40.5-11.378-0.59981v41.1h-20zm42.302-8.5669c7.7961-2.1649 10.537-13.722 4.7824-20.167l-2.9156-3.2658-24.169-0.6675v25.168l9.25-6e-3c5.0875-3e-3 10.961-0.48068 13.052-1.0614zm40.016 57.817c0.73952-1.7875 10.708-26.312 22.153-54.5s21.123-51.25 21.507-51.25c0.91199 0 11.33 25.254 43.007 104.25l1.9047 4.75h-22.621l-2.1958-6.0223-2.1958-6.0223-36.211 0.54464-3.8316 11.5h-22.86zm53.516-28.574c-0.18333-0.45346-2.3572-6.7535-4.8308-14s-4.7282-13.176-5.0102-13.176c-0.43182 0-8.8285 22.869-9.8157 26.734-0.24501 0.9592 2.1368 1.2658 9.8333 1.2658 5.5862 0 10.007-0.37102 9.8233-0.82448zm51.167-21.676v-53.5h2.897c2.3464 0 4.1026 1.378 9.2397 7.25 3.4885 3.9875 12.389 14 19.778 22.25s13.961 15.588 14.603 16.307c0.9283 1.0389 5.5233-3.5277 22.388-22.25 18.537-20.578 21.592-23.557 24.157-23.557h2.9367v107h-21v-29.5c0-16.225-0.1608-29.5-0.35734-29.5-0.41006 0-18.79 18.749-23.528 24l-3.1579 3.5-13.228-13.772c-7.2755-7.5747-13.566-13.762-13.978-13.75-0.4125 0.0122-0.75 13.297-0.75 29.522v29.5h-20zm120 1v-52.5h52v20h-32v22h28v20h-28v22h34v21h-54z"/>
+                    </svg>
+                </a>
+                
+                <ul class="nav-bar">
+                    <li>
+                        <a class="active" href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="conservation.html">Conservation</a>
+                    </li>
+                    <li>
+                        <a href="fishing.html">Fishing</a>
+                    </li>
+                    <li>
+                        <a href="mining.html">Mining</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="modal-nav" data-state="closed" role="dialog">
+                <div class="modal-content">
+                    <ul class="modal-nav-bar">
+                        <li>
+                            <a class="active" href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="conservation.html">Conservation</a>
+                        </li>
+                        <li>
+                            <a href="fishing.html">Fishing</a>
+                        </li>
+                        <li>
+                            <a href="mining.html">Mining</a>
+                        </li>
+                    </ul>
+
+                    <button id="close-modal" aria-label="Close modal">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" focusable="false" aria-hidden="true" width="2rem">
+                            <path fill="currentColor" d="m12.45 37.65-2.1-2.1L21.9 24 10.35 12.45l2.1-2.1L24 21.9l11.55-11.55 2.1 2.1L26.1 24l11.55 11.55-2.1 2.1L24 26.1Z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1 hidden>iFrame</h1>
+
+        <section class="section">
+            <h2>Cycles</h2>
+            
+            <div class="section-content full-size">
+                <div class="container">
+                    <h3>Earth</h3>
+                    <p id="earth-time" class="skeleton-text"></p>
+
+                    <!-- Decoration purpose -->
+                        <div class="skeleton"></div>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" height="3rem" width="3rem" viewBox="0 0 48 48" focusable="false" aria-hidden="true" id="svg-earth-day">
+                            <path fill="currentColor" d="M24.05 46.55 17.3 40H8v-9.3L1.3 24 8 17.3V8h9.3l6.75-6.7L30.7 8H40v9.3l6.7 6.7-6.7 6.7V40h-9.3Zm0-9.55q5.4 0 9.175-3.8Q37 29.4 37 23.95q0-5.4-3.775-9.175Q29.45 11 24.05 11q-5.45 0-9.25 3.775T11 23.95q0 5.45 3.8 9.25t9.25 3.8Zm0-3q-4.2 0-7.125-2.925T14 23.95q0-4.15 2.925-7.05Q19.85 14 24.05 14q4.15 0 7.05 2.9 2.9 2.9 2.9 7.05 0 4.2-2.9 7.125T24.05 34Zm0 8.35 5.4-5.35H37v-7.55L42.45 24 37 18.55V11h-7.55l-5.4-5.45-5.5 5.45H11v7.55L5.55 24 11 29.45V37h7.5ZM24 23.95Z"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="3rem" width="3rem" viewBox="0 0 48 48" focusable="false" aria-hidden="true" id="svg-earth-night">
+                            <path fill="currentColor" d="M26.2 46q-4.2 0-7.875-1.6t-6.4-4.325Q9.2 37.35 7.6 33.675 6 30 6 25.8q0-7.3 4.65-12.875T22.5 6q-.9 4.9.55 9.625 1.45 4.725 5 8.275 3.55 3.55 8.275 5.025Q41.05 30.4 46 29.5q-1.3 7.2-6.9 11.85Q33.5 46 26.2 46Zm0-3q5 0 9.1-2.85t6.6-7.25q-4.5-.4-8.65-2.075Q29.1 29.15 25.95 26q-3.2-3.15-4.85-7.275-1.65-4.125-2.05-8.575-4.4 2.4-7.225 6.525Q9 20.8 9 25.8q0 7.15 5.025 12.175T26.2 43Zm-.3-17Z"/>
+                        </svg>
+                    <!-- ------------------ -->
+                </div>
+
+                <div class="container">
+                    <h3>Plains of Eidolon</h3>
+                    <p id="plains-time" class="skeleton-text"></p>
+
+                    <!-- Decoration purpose -->
+                        <div class="skeleton"></div>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" height="3rem" width="3rem" viewBox="0 0 48 48" focusable="false" aria-hidden="true" id="svg-poe-day">
+                            <path fill="currentColor" d="M24.05 46.55 17.3 40H8v-9.3L1.3 24 8 17.3V8h9.3l6.75-6.7L30.7 8H40v9.3l6.7 6.7-6.7 6.7V40h-9.3Zm0-9.55q5.4 0 9.175-3.8Q37 29.4 37 23.95q0-5.4-3.775-9.175Q29.45 11 24.05 11q-5.45 0-9.25 3.775T11 23.95q0 5.45 3.8 9.25t9.25 3.8Zm0-3q-4.2 0-7.125-2.925T14 23.95q0-4.15 2.925-7.05Q19.85 14 24.05 14q4.15 0 7.05 2.9 2.9 2.9 2.9 7.05 0 4.2-2.9 7.125T24.05 34Zm0 8.35 5.4-5.35H37v-7.55L42.45 24 37 18.55V11h-7.55l-5.4-5.45-5.5 5.45H11v7.55L5.55 24 11 29.45V37h7.5ZM24 23.95Z"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="3rem" width="3rem" viewBox="0 0 48 48" focusable="false" aria-hidden="true" id="svg-poe-night">
+                            <path fill="currentColor" d="M26.2 46q-4.2 0-7.875-1.6t-6.4-4.325Q9.2 37.35 7.6 33.675 6 30 6 25.8q0-7.3 4.65-12.875T22.5 6q-.9 4.9.55 9.625 1.45 4.725 5 8.275 3.55 3.55 8.275 5.025Q41.05 30.4 46 29.5q-1.3 7.2-6.9 11.85Q33.5 46 26.2 46Zm0-3q5 0 9.1-2.85t6.6-7.25q-4.5-.4-8.65-2.075Q29.1 29.15 25.95 26q-3.2-3.15-4.85-7.275-1.65-4.125-2.05-8.575-4.4 2.4-7.225 6.525Q9 20.8 9 25.8q0 7.15 5.025 12.175T26.2 43Zm-.3-17Z"/>
+                        </svg>
+                    <!-- ------------------ -->
+                </div>
+
+                <div class="container">
+                    <h3>Orb Vallis</h3>
+                    <p id="vallis-time" class="skeleton-text"></p>
+
+                    <!-- Decoration purpose -->
+                        <div class="skeleton"></div>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" height="3rem" width="3rem" viewBox="0 0 48 48" focusable="false" aria-hidden="true" id="svg-vallis-warm">
+                            <path fill="currentColor" d="M11 28q0 3.15 1.425 5.925T16.4 38.55q-.2-.6-.3-1.225Q16 36.7 16 36.1q0-1.6.6-3t1.75-2.55L24 25l5.65 5.55q1.15 1.15 1.75 2.55.6 1.4.6 3 0 .6-.1 1.225-.1.625-.3 1.225 2.55-1.85 3.975-4.625Q37 31.15 37 28q0-2.7-1.15-5.275T32.55 18q-1.05.75-2.2 1.175-1.15.425-2.3.425-3.05 0-5.05-2.075T21 12.3v-1q-2.3 1.65-4.15 3.65-1.85 2-3.15 4.175-1.3 2.175-2 4.45Q11 25.85 11 28Zm13 1.2-3.55 3.5q-.7.7-1.075 1.55Q19 35.1 19 36.1q0 2.05 1.45 3.475Q21.9 41 24 41q2.1 0 3.55-1.425Q29 38.15 29 36.1q0-1-.375-1.85-.375-.85-1.075-1.55ZM24 6v6.6q0 1.7 1.175 2.85 1.175 1.15 2.875 1.15.9 0 1.675-.375T31.1 15.1L32 14q3.7 2.1 5.85 5.85Q40 23.6 40 28q0 6.7-4.65 11.35Q30.7 44 24 44q-6.7 0-11.35-4.65Q8 34.7 8 28q0-6.4 4.3-12.325Q16.6 9.75 24 6Z"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="3rem" width="3rem" viewBox="0 0 48 48" focusable="false" aria-hidden="true" id="svg-vallis-cold">
+                            <path fill="currentColor" d="M22.5 44v-9.75l-7.45 7.45-2.15-2.1 9.6-9.6v-4.5H18l-9.4 9.4-2.2-2.05 7.35-7.35H4v-3h9.75L6.25 15l2.15-2.15L18 22.5h4.5v-4.55l-9.4-9.4 2.1-2.2 7.3 7.35V4h3v9.7L33 6.2l2.1 2.15-9.6 9.6v4.55h4.55l9.45-9.45 2.15 2.1-7.35 7.35H44v3h-9.7l7.4 7.45-2.05 2.15-9.6-9.6H25.5V30l9.6 9.65-2.05 2.15-7.55-7.55V44Z"/>
+                        </svg>
+                    <!-- ------------------ -->
+                </div>
+
+                <div class="container">
+                    <h3>Cambion Drift</h3>
+                    <p id="cambion-time" class="skeleton-text"></p>
+
+                    <!-- Decoration purpose -->
+                        <div class="skeleton"></div>
+
+                        <img src="assets/imgs/fass.webp" alt="" id="cambion-fass">
+                        <img src="assets/imgs/vome.webp" alt="" id="cambion-vome">
+                    <!-- ------------------ -->
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Events</h2>
+
+            <div id="events" class="section-content auto-layout">
+                <div id="event-container" class="container">
+                    <p id="first-event" class="skeleton-text"></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Sortie</h2>
+
+            <div class="section-content auto-layout">
+                <div class="container">
+                    <p id="sortie-info" class="skeleton-text"></p>
+                    <p id="sortie-pt1" class="skeleton-text"></p>
+                    <p id="sortie-pt2" class="skeleton-text"></p>
+                    <p id="sortie-pt3" class="skeleton-text"></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Archon hunt</h2>
+
+            <div class="section-content auto-layout">
+                <div class="container">
+                    <p id="archon-info" class="skeleton-text"></p>
+                    <p id="archon-pt1" class="skeleton-text"></p>
+                    <p id="archon-pt2" class="skeleton-text"></p>
+                    <p id="archon-pt3" class="skeleton-text"></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Alerts</h2>
+
+            <div id="alerts" class="section-content auto-layout">
+                <div id="alert-container" class="container">
+                    <p id="first-alert" class="skeleton-text"></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Void fissures</h2>
+
+            <div class="buttons-container">
+                <div class="tiers-container">
+                    <button id="lithBtn" class="active" disabled>Lith</button>
+                    <button id="mesoBtn">Meso</button>
+                    <button id="neoBtn">Neo</button>
+                    <button id="axiBtn">Axi</button>
+                </div>
+                <div class="type-container">
+                    <button id="fissureBtn" class="active" disabled>Fissures</button>
+                    <button id="voidstormBtn">Voidstorm</button>
+                </div>
+            </div>
+
+            <div id="fissures" class="section-content auto-layout">
+                <div id="fissure-container" class="container">
+                    <p id="first-fissure" class="skeleton-text"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <span class="footer-copyright">
+            Digital Extremes Ltd, Warframe and the logo Warframe are registered trademarks. iFrame has no direct links with Warframe Ltd or Digital Extremes. All trademarks are the property of their respective owners and all rights are reserved worldwide. All artwork, screenshots, characters or other recognizable features of the intellectual property relating to these trademarks are likewise the intellectual property of Digital Extremes Ltd.
+        </span>
+        
+        <span class="footer-copyright">
+            Some of the features of this website are using <a href="https://docs.warframestat.us/" target="_blank" rel="noopener">Warframe API</a>, developed by Warframe community.
+        </span>
+
+        <span class="footer-copyright">
+            &copy;2022 iFrame. All rights reserved.
+        </span>
+    </footer>
+
+    <script src="config.js" type="module"></script>
+    <script src="index.js" type="module"></script>
+</body>
+</html>

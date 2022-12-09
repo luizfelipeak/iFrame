@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find information about ores and gems which can be used to exchange for standing points or resources.">
+    <meta name="keywords" content="Warframe, information, mining, ore, gem, resources, Plains of Eidolon, Orb Vallis, Cambion Drift">
+    <meta name="author" content="Luiz Felipe A. K.">
+
+    <title>iFrame | Mining</title>
+
+    <link rel="icon" sizes="48x48" href="assets/imgs/favicon.ico">
+    
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="mining.css">
+</head>
+<body>
+    <header class="header-nav">
+        <nav>
+            <div class="nav-site">
+                <button id="nav-btn" aria-controls="modal-nav" aria-label="Navigation menu" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" focusable="false" aria-hidden="true" width="2rem">
+                        <path fill="currentColor" d="M6 36V33H42V36ZM6 25.5V22.5H42V25.5ZM6 15V12H42V15Z"/>
+                    </svg>
+                </button>
+                
+                <a href="index.html" class="nav-logo" aria-label="Home page">
+                    <svg version="1.1" viewBox="0 0 500 125" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true" width="6rem">
+                        <path fill="currentColor" d="m12.77 65.09v-52.5h20v105h-20zm45 0v-52.5h52v20h-32v22h27v20h-27v43h-20zm70 0v-52.5h23.462c27.192 0 31.13 0.84565 38.62 8.2945 6.519 6.483 9.3162 13.497 9.2615 23.223-0.0709 12.61-5.8808 22.659-15.908 27.513-2.44 1.1812-4.4364 2.3186-4.4364 2.5275 0 0.32208 10.445 19.152 21.185 38.192l2.9615 5.25h-22.991l-20.777-40.5-11.378-0.59981v41.1h-20zm42.302-8.5669c7.7961-2.1649 10.537-13.722 4.7824-20.167l-2.9156-3.2658-24.169-0.6675v25.168l9.25-6e-3c5.0875-3e-3 10.961-0.48068 13.052-1.0614zm40.016 57.817c0.73952-1.7875 10.708-26.312 22.153-54.5s21.123-51.25 21.507-51.25c0.91199 0 11.33 25.254 43.007 104.25l1.9047 4.75h-22.621l-2.1958-6.0223-2.1958-6.0223-36.211 0.54464-3.8316 11.5h-22.86zm53.516-28.574c-0.18333-0.45346-2.3572-6.7535-4.8308-14s-4.7282-13.176-5.0102-13.176c-0.43182 0-8.8285 22.869-9.8157 26.734-0.24501 0.9592 2.1368 1.2658 9.8333 1.2658 5.5862 0 10.007-0.37102 9.8233-0.82448zm51.167-21.676v-53.5h2.897c2.3464 0 4.1026 1.378 9.2397 7.25 3.4885 3.9875 12.389 14 19.778 22.25s13.961 15.588 14.603 16.307c0.9283 1.0389 5.5233-3.5277 22.388-22.25 18.537-20.578 21.592-23.557 24.157-23.557h2.9367v107h-21v-29.5c0-16.225-0.1608-29.5-0.35734-29.5-0.41006 0-18.79 18.749-23.528 24l-3.1579 3.5-13.228-13.772c-7.2755-7.5747-13.566-13.762-13.978-13.75-0.4125 0.0122-0.75 13.297-0.75 29.522v29.5h-20zm120 1v-52.5h52v20h-32v22h28v20h-28v22h34v21h-54z"/>
+                    </svg>
+                </a>
+                
+                <ul class="nav-bar">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="conservation.html">Conservation</a>
+                    </li>
+                    <li>
+                        <a href="fishing.html">Fishing</a>
+                    </li>
+                    <li>
+                        <a class="active" href="mining.html">Mining</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="modal-nav" data-state="closed" role="dialog">
+                <div class="modal-content">
+                    <ul class="modal-nav-bar">
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="conservation.html">Conservation</a>
+                        </li>
+                        <li>
+                            <a href="fishing.html">Fishing</a>
+                        </li>
+                        <li>
+                            <a class="active" href="mining.html">Mining</a>
+                        </li>
+                    </ul>
+
+                    <button id="close-modal" aria-label="Close modal">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" focusable="false" aria-hidden="true" width="2rem">
+                            <path fill="currentColor" d="m12.45 37.65-2.1-2.1L21.9 24 10.35 12.45l2.1-2.1L24 21.9l11.55-11.55 2.1 2.1L26.1 24l11.55 11.55-2.1 2.1L24 26.1Z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1 hidden>Mining</h1>
+
+        <section class="section">
+            <div class="accordion" id="plains">
+                <h2>Plains of Eidolon</h2>
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" viewBox="0 0 48 48" class="svg-open">
+                    <path fill="currentColor" d="M22.5 38V25.5H10V22.5H22.5V10H25.5V22.5H38V25.5H25.5V38Z"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" viewBox="0 0 48 48" class="svg-close">
+                    <path fill="currentColor" d="M10 25.5v-3h28v3Z"/>
+                </svg>
+            </div>
+            
+            <div class="section-content open" id="plains-content">
+                <div class="container">
+                    <h3>Coprun</h3>
+                    <p><b>Type</b>: ore.</p>
+                    <p><b>Rarity</b>: common.</p>
+                    <p><b>Location</b>: anywhere.</p>
+                </div>
+
+                <div class="container">
+                    <h3>Pyrol</h3>
+                    <p><b>Type</b>: ore.</p>
+                    <p><b>Rarity</b>: common.</p>
+                    <p><b>Location</b>: east of <b>Twin Horns</b>.</p>
+                </div>
+
+                <div class="container">
+                    <h3>Ferros</h3>
+                    <p><b>Type</b>: ore.</p>
+                    <p><b>Rarity</b>: uncommon.</p>
+                    <p><b>Location</b>: anywhere.</p>
+                </div>
+
+                <div class="container">
+                    <h3>Auron</h3>
+                    <p><b>Type</b>: ore.</p>
+                    <p><b>Rarity</b>: rare.</p>
+                    <p><b>Location</b>: cave on top of <b>Mount Nang</b>.</p>
+                </div>
+
+                <div class="container">
+                    <h3>Azurite</h3>
+                    <p><b>Type</b>: gem.</p>
+                    <p><b>Rarity</b>: common.</p>
+                    <p><b>Location</b>: anywhere.</p>
+                </div>
+
+                <div class="container">
+                    <h3>Devar</h3>
+                    <p><b>Type</b>: gem.</p>
+                    <p><b>Rarity</b>: common.</p>
+                    <p><b>Location</b>: anywhere.</p>
+                </div>
+
+                <div class="container">
+                    <h3>Veridos</h3>
+                    <p><b>Type</b>: gem.</p>
+                    <p><b>Rarity</b>: uncommon.</p>
+                    <p><b>Location</b>: anywhere.</p>
+                </div>
+
+                <div class="container">
+                    <h3>Crimzian</h3>
+                    <p><b>Type</b>: gem.</p>
+                    <p><b>Rarity</b>: rare.</p>
+                    <p><b>Location</b>: anywhere.</p>
+                </div>
+
+                <div class="container">
+                    <h3>Sentirum</h3>
+                    <p><b>Type</b>: gem.</p>
+                    <p><b>Rarity</b>: rare.</p>
+                    <p><b>Location</b>: anywhere.</p>
+                </div>
+
+                <div class="container">
+                    <h3>Nyth</h3>
+                    <p><b>Type</b>: gem.</p>
+                    <p><b>Rarity</b>: rare.</p>
+                    <p><b>Location</b>: anywhere.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="accordion" id="vallis">
+                <h2>Orb Vallis</h2>
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" viewBox="0 0 48 48" class="svg-open">
+                    <path fill="currentColor" d="M22.5 38V25.5H10V22.5H22.5V10H25.5V22.5H38V25.5H25.5V38Z"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" viewBox="0 0 48 48" class="svg-close">
+                    <path fill="currentColor" d="M10 25.5v-3h28v3Z"/>
+                </svg>
+            </div>
+            
+            <div class="section-content open" id="vallis-content">
+                <div class="container">
+                    <h3>Axidite</h3>
+                    <p><b>Type</b>: ore.</p>
+                    <p><b>Rarity</b>: common.</p>
+                    <p><b>Location</b>: anywhere.</p>
+                </div>
+
+                <div class="container">
+                    <h3>Travoride</h3>
+                    <p><b>Type</b>: ore.</p>
+                    <p><b>Rarity</b>: common.</p>
+                    <p><b>Location</b>: anywhere.</p>
+                </div>
+
+                <div class="container">
+                    <h3>Venerol</h3>
+                    <p><b>Type</b>: ore.</p>
+                    <p><b>Rarity</b>: uncommon.</p>
+                    <p><b>Location</b>: anywhere.</p>
+                </div>
+
+                <div class="container">
+                    <h3>Hesperon</h3>
+                    <p><b>Type</b>: ore.</p>
+                    <p><b>Rarity</b>: rare.</p>
+                    <p><b>Location</b>: lake and mushroom forest northwest of <b>Temple of Profit</b>, southwest corner of <b>Asta Crater</b>, southwest of <b>Temple Fabrication</b>.</p>
+                </div>
+
+                <div class="container">
+                    <h3>Phasmin</h3>
+                    <p><b>Type</b>: gem.</p>
+                    <p><b>Rarity</b>: common.</p>
+                    <p><b>Location</b>: anywhere.</p>
+                </div>
+
+                <div class="container">
+                    <h3>Noctrul</h3>
+                    <p><b>Type</b>: gem.</p>
+                    <p><b>Rarity</b>: common.</p>
+                    <p><b>Location</b>: anywhere.</p>
+                </div>
+
+                <div class="container">
+                    <h3>Goblite</h3>
+                    <p><b>Type</b>: gem.</p>
+                    <p><b>Rarity</b>: uncommon.</p>
+                    <p><b>Location</b>: anywhere.</p>
+                </div>
+
+                <div class="container">
+                    <h3>Amarast</h3>
+                    <p><b>Type</b>: gem.</p>
+                    <p><b>Rarity</b>: rare.</p>
+                    <p><b>Location</b>: <b>caves on western edge</b> of map, <b>southwestern</b> and <b>northwestern</b> caves.</p>
+                </div>
+
+                <div class="container">
+                    <h3>Zodian</h3>
+                    <p><b>Type</b>: gem.</p>
+                    <p><b>Rarity</b>: rare.</p>
+                    <p><b>Location</b>: anywhere.</p>
+                </div>
+
+                <div class="container">
+                    <h3>Thyst</h3>
+                    <p><b>Type</b>: gem.</p>
+                    <p><b>Rarity</b>: rare.</p>
+                    <p><b>Location</b>: anywhere.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="accordion" id="cambion">
+                <h2>Cambion Drift</h2>
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" viewBox="0 0 48 48" class="svg-open">
+                    <path fill="currentColor" d="M22.5 38V25.5H10V22.5H22.5V10H25.5V22.5H38V25.5H25.5V38Z"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" viewBox="0 0 48 48" class="svg-close">
+                    <path fill="currentColor" d="M10 25.5v-3h28v3Z"/>
+                </svg>
+            </div>
+            
+            <div class="section-content open" id="cambion-content">
+                <div class="container">
+                    <h3>Adramalium</h3>
+                    <p><b>Type</b>: ore.</p>
+                    <p><b>Rarity</b>: common.</p>
+                    <p><b>Location</b>: anywhere.</p>
+                </div>
+
+                <div class="container">
+                    <h3>Bapholite</h3>
+                    <p><b>Type</b>: ore.</p>
+                    <p><b>Rarity</b>: common.</p>
+                    <p><b>Location</b>: anywhere.</p>
+                </div>
+
+                <div class="container">
+                    <h3>Namalon</h3>
+                    <p><b>Type</b>: ore.</p>
+                    <p><b>Rarity</b>: uncommon.</p>
+                    <p><b>Location</b>: yellow veins cave at <b>Albrecht's Prospect</b>.</p>
+                </div>
+
+                <div class="container">
+                    <h3>Thaumatica</h3>
+                    <p><b>Type</b>: ore.</p>
+                    <p><b>Rarity</b>: rare.</p>
+                    <p><b>Location</b>: more common on yellow veins.</p>
+                </div>
+
+                <div class="container">
+                    <h3>Dagonic</h3>
+                    <p><b>Type</b>: gem.</p>
+                    <p><b>Rarity</b>: common.</p>
+                    <p><b>Location</b>: anywhere.</p>
+                </div>
+
+                <div class="container">
+                    <h3>Tiametrite</h3>
+                    <p><b>Type</b>: gem.</p>
+                    <p><b>Rarity</b>: common.</p>
+                    <p><b>Location</b>: anywhere.</p>
+                </div>
+
+                <div class="container">
+                    <h3>Heciphron</h3>
+                    <p><b>Type</b>: gem.</p>
+                    <p><b>Rarity</b>: uncommon.</p>
+                    <p><b>Location</b>: anywhere.</p>
+                </div>
+
+                <div class="container">
+                    <h3>Necrathene</h3>
+                    <p><b>Type</b>: gem.</p>
+                    <p><b>Rarity</b>: rare.</p>
+                    <p><b>Location</b>: anywhere.</p>
+                </div>
+
+                <div class="container">
+                    <h3>Embolos</h3>
+                    <p><b>Type</b>: gem.</p>
+                    <p><b>Rarity</b>: rare.</p>
+                    <p><b>Location</b>: at <b>Deimos Terminus</b> or big cave south of <b>Catabolic Gutter</b>.</p>
+                </div>
+
+                <div class="container">
+                    <h3>Xenorhast</h3>
+                    <p><b>Type</b>: gem.</p>
+                    <p><b>Rarity</b>: rare.</p>
+                    <p><b>Location</b>: big cave south of <b>Catabolic Gutter</b> seems to have more valuable veins.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <span class="footer-copyright">
+            Digital Extremes Ltd, Warframe and the logo Warframe are registered trademarks. iFrame has no direct links with Warframe Ltd or Digital Extremes. All trademarks are the property of their respective owners and all rights are reserved worldwide. All artwork, screenshots, characters or other recognizable features of the intellectual property relating to these trademarks are likewise the intellectual property of Digital Extremes Ltd.
+        </span>
+        
+        <span class="footer-copyright">
+            Some of the features of this website are using <a href="https://docs.warframestat.us/" target="_blank" rel="noopener">Warframe API</a>, developed by Warframe community.
+        </span>
+
+        <span class="footer-copyright">
+            &copy;2022 iFrame. All rights reserved.
+        </span>
+    </footer>
+
+    <script src="config.js" type="module"></script>
+    <script src="conservation.js" type="module"></script>
+</body>
+</html>
