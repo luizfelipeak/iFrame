@@ -10,6 +10,15 @@
     outline: 1px solid var(--black-10);
 
     display: flex;
+    align-items: center;
+
+    background-color: transparent;
+    border: none;
+}
+
+.accordion:hover,
+.accordion:focus-visible {
+    outline-color: initial;
 }
 
 .accordion h2 {
@@ -29,7 +38,9 @@
     display: none;
 }
 
-.section-content.open {
+#plains[aria-expanded="true"] + .section-content,
+#vallis[aria-expanded="true"] + .section-content,
+#cambion[aria-expanded="true"] + .section-content {
     display: initial;
 
     outline: 1px solid var(--black-10);
@@ -79,7 +90,9 @@
         max-width: 80em;
     }
 
-    .section-content.open {
+    #plains[aria-expanded="true"] + .section-content,
+    #vallis[aria-expanded="true"] + .section-content,
+    #cambion[aria-expanded="true"] + .section-content {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: var(--spc-default);
