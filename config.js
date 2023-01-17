@@ -3,7 +3,6 @@
         const navButton = document.getElementById("nav-btn");
         const modalNav = document.getElementById("modal-nav");
         const closeModal = document.getElementById("close-modal");
-        let isOpened;
     // ------------------------------------------
 
     navButton.addEventListener("click", () => {
