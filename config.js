@@ -1,71 +1,120 @@
 // ------------ Navbar functions ------------
-    // ------------ Navbar variables ------------
-        const navButton = document.getElementById("nav-btn");
-        const modalNav = document.getElementById("modal-nav");
-        const closeModal = document.getElementById("close-modal");
-    // ------------------------------------------
+const navButton = document.getElementById("nav-btn");
+const modalNav = document.getElementById("modal-nav");
+const closeModal = document.getElementById("close-modal");
+const root = document.querySelector(":root");
+const theme = document.getElementById("theme");
+const lightMode = document.getElementById("light-mode");
+const darkMode = document.getElementById("dark-mode");
 
-    navButton.addEventListener("click", () => {
-        navButton.setAttribute("aria-expanded", "true");
-        modalNav.setAttribute("data-state", "opened");
-    });
+// ----------- Close mobile navigation menu -----------
+window.addEventListener("resize", () => {
+    if(window.innerWidth >= 700) {
+        modalNav.close();
+    }
+});
 
-    closeModal.addEventListener("click", () => {
-        navButton.setAttribute("aria-expanded", "false");
+// ----------- Click event to open/close navigation menu (Dialog) -----------
+navButton.addEventListener("click", () => {
+    navButton.setAttribute("aria-expanded", "true");
+    modalNav.showModal();
+    modalNav.setAttribute("data-state", "opened");
+});
+
+closeModal.addEventListener("click", () => {
+    closeDialogModal();
+});
+
+modalNav.addEventListener("cancel", (event) => {
+    event.preventDefault();
+    closeDialogModal();
+});
+
+function closeDialogModal() {
+    navButton.setAttribute("aria-expanded", "false");
+    modalNav.setAttribute("data-state", "closing");
+
+    modalNav.addEventListener("animationend", () => {
+        modalNav.close();
         modalNav.setAttribute("data-state", "closed");
-    });
-// ------------------------------------------
+    }, {once: true});
+}
 
-const plainsAccordion = document.getElementById("plains");
-const plainsContent = document.getElementById("plains-content");
-const vallisAccordion = document.getElementById("vallis");
-const vallisContent = document.getElementById("vallis-content");
-const cambionAccordion = document.getElementById("cambion");
-const cambionContent = document.getElementById("cambion-content");
+// ----------- Applying apropriate description on theme button -----------
+checkTheme();
 
-const svgOpenPlains = document.getElementsByClassName("svg-open")[0];
-const svgOpenVallis = document.getElementsByClassName("svg-open")[1];
-const svgOpenCambion = document.getElementsByClassName("svg-open")[2];
+function checkTheme() {
+    if(localStorage.getItem("theme") === "dark-mode") {
+        theme.setAttribute("aria-label", "Change to light mode");
+        theme.setAttribute("title", "Change to light mode");
+        lightMode.classList.remove("hide");
+        darkMode.classList.add("hide");
 
-const svgClosePlains = document.getElementsByClassName("svg-close")[0];
-const svgCloseVallis = document.getElementsByClassName("svg-close")[1];
-const svgCloseCambion = document.getElementsByClassName("svg-close")[2];
+        applyTheme();
+    }
+    else if(localStorage.getItem("theme") === "light-mode") {
+        darkMode.classList.remove("hide");
+        applyTheme();
+    }
+    else if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        theme.setAttribute("aria-label", "Change to light mode");
+        theme.setAttribute("title", "Change to light mode");
+        darkMode.classList.add("hide");
+        lightMode.classList.remove("hide");
 
-plainsAccordion.addEventListener("click", () => {
-    if(plainsAccordion.getAttribute("aria-expanded") === "true") {
-        svgOpenPlains.style.display = "initial";
-        svgClosePlains.style.display = "none";
-        plainsAccordion.setAttribute("aria-expanded", "false");
+        applyTheme();
     }
     else {
-        svgOpenPlains.style.display = "none";
-        svgClosePlains.style.display = "initial";
-        plainsAccordion.setAttribute("aria-expanded", "true");
+        darkMode.classList.remove("hide");
+        lightMode.classList.add("hide");
+    }
+}
+
+// ----------- Event of the theme button -----------
+theme.addEventListener("click", () => {
+    if(localStorage.getItem("theme") === "dark-mode") {
+        localStorage.setItem("theme", "light-mode");
+        theme.setAttribute("aria-label", "Change to dark mode");
+        theme.setAttribute("title", "Change to dark mode");
+        lightMode.classList.add("hide");
+        darkMode.classList.remove("hide");
+
+        applyTheme();
+    }
+    else if(localStorage.getItem("theme") === "light-mode") {
+        localStorage.setItem("theme", "dark-mode");
+        theme.setAttribute("aria-label", "Change to light mode");
+        theme.setAttribute("title", "Change to light mode");
+        darkMode.classList.add("hide");
+        lightMode.classList.remove("hide");
+
+        applyTheme();
+    }
+    else if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        localStorage.setItem("theme", "light-mode");
+        theme.setAttribute("aria-label", "Change to dark mode");
+        theme.setAttribute("title", "Change to dark mode");
+        lightMode.classList.add("hide");
+        darkMode.classList.remove("hide");
+
+        applyTheme();
     }
 });
 
-vallisAccordion.addEventListener("click", () => {
-    if(vallisAccordion.getAttribute("aria-expanded") == "true") {
-        svgOpenVallis.style.display = "initial";
-        svgCloseVallis.style.display = "none";
-        vallisAccordion.setAttribute("aria-expanded", "false");
+// ----------- Verify which theme to apply based on local storage -----------
+function applyTheme() {
+    if(localStorage.getItem("theme")) {
+        if(localStorage.getItem("theme") === "dark-mode") {
+            root.style.setProperty("--color", "var(--white)");
+            root.style.setProperty("--theme", "var(--clr-quaternary)");
+            root.style.setProperty("--shadow", "var(--black-25)");
+            root.style.setProperty("--clr-skeleton", "var(--black-50)");
+        }
+        else {
+            root.style.setProperty("--color", "var(--black)");
+            root.style.setProperty("--theme", "var(--white)");
+            root.style.setProperty("--shadow", "var(--black-5)");
+            root.style.setProperty("--clr-skeleton", "var(--black-10)");
+        }
     }
-    else {
-        svgOpenVallis.style.display = "none";
-        svgCloseVallis.style.display = "initial";
-        vallisAccordion.setAttribute("aria-expanded", "true");
-    }
-});
-
-cambionAccordion.addEventListener("click", () => {
-    if(cambionAccordion.getAttribute("aria-expanded") === "true") {
-        svgOpenCambion.style.display = "initial";
-        svgCloseCambion.style.display = "none";
-        cambionAccordion.setAttribute("aria-expanded", "false");
-    }
-    else {
-        svgOpenCambion.style.display = "none";
-        svgCloseCambion.style.display = "initial";
-        cambionAccordion.setAttribute("aria-expanded", "true");
-    }
-});
+}

@@ -16,11 +16,29 @@
     <link rel="stylesheet" type="text/css" href="conservation.css">
 </head>
 <body>
-    <header class="header-nav">
+    <script>
+        const root = document.querySelector(":root");
+        if(localStorage.getItem("theme")) {
+            if(localStorage.getItem("theme") === "dark-mode") {
+                root.style.setProperty("--color", "var(--white)");
+                root.style.setProperty("--theme", "var(--clr-quaternary)");
+                root.style.setProperty("--shadow", "var(--black-25)");
+                root.style.setProperty("--clr-skeleton", "var(--black-50)");
+            }
+            else {
+                root.style.setProperty("--color", "var(--black)");
+                root.style.setProperty("--theme", "var(--white)");
+                root.style.setProperty("--shadow", "var(--black-5)");
+                root.style.setProperty("--clr-skeleton", "var(--black-10)");
+            }
+        }
+    </script>
+    
+    <header>
         <nav>
             <div class="nav-site">
-                <button id="nav-btn" aria-controls="modal-nav" aria-label="Navigation menu" aria-expanded="false">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" focusable="false" aria-hidden="true" width="2rem">
+                <button aria-label="Navigation menu" aria-expanded="false" aria-controls="modal-nav" class="nav-btn" id="nav-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="2rem" viewBox="0 0 48 48" focusable="false" aria-hidden="true">
                         <path fill="currentColor" d="M6 36V33H42V36ZM6 25.5V22.5H42V25.5ZM6 15V12H42V15Z"/>
                     </svg>
                 </button>
@@ -36,7 +54,7 @@
                         <a href="index.html">Home</a>
                     </li>
                     <li>
-                        <a class="active" href="conservation.html">Conservation</a>
+                        <a href="conservation.html" class="active">Conservation</a>
                     </li>
                     <li>
                         <a href="fishing.html">Fishing</a>
@@ -45,40 +63,48 @@
                         <a href="mining.html">Mining</a>
                     </li>
                 </ul>
-            </div>
 
-            <div id="modal-nav" data-state="closed" role="dialog">
-                <div class="modal-content">
-                    <ul class="modal-nav-bar">
-                        <li>
-                            <a href="index.html">Home</a>
-                        </li>
-                        <li>
-                            <a class="active" href="conservation.html">Conservation</a>
-                        </li>
-                        <li>
-                            <a href="fishing.html">Fishing</a>
-                        </li>
-                        <li>
-                            <a href="mining.html">Mining</a>
-                        </li>
-                    </ul>
+                <button aria-label="Change to dark mode" title="Change to dark mode" class="theme-btn" id="theme">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36px" height="36px" viewBox="0 0 48 48" focusable="false" aria-hidden="true" class="dark-mode hide" id="dark-mode">
+                        <path fill="currentColor" d="M24 42q-7.5 0-12.75-5.25T6 24q0-7.5 5.25-12.75T24 6q.4 0 .85.025.45.025 1.15.075-1.8 1.6-2.8 3.95-1 2.35-1 4.95 0 4.5 3.15 7.65Q28.5 25.8 33 25.8q2.6 0 4.95-.925T41.9 22.3q.05.6.075.975Q42 23.65 42 24q0 7.5-5.25 12.75T24 42Z"/>
+                    </svg>
 
-                    <button id="close-modal" aria-label="Close modal">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" focusable="false" aria-hidden="true" width="2rem">
-                            <path fill="currentColor" d="m12.45 37.65-2.1-2.1L21.9 24 10.35 12.45l2.1-2.1L24 21.9l11.55-11.55 2.1 2.1L26.1 24l11.55 11.55-2.1 2.1L24 26.1Z"/>
-                        </svg>
-                    </button>
-                </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36px" height="36px" viewBox="0 0 48 48" focusable="false" aria-hidden="true" class="light-mode hide" id="light-mode">
+                        <path fill="currentColor" d="M24 34q-4.15 0-7.075-2.925T14 24q0-4.15 2.925-7.075T24 14q4.15 0 7.075 2.925T34 24q0 4.15-2.925 7.075T24 34ZM3.5 25.5q-.65 0-1.075-.425Q2 24.65 2 24q0-.65.425-1.075Q2.85 22.5 3.5 22.5h5q.65 0 1.075.425Q10 23.35 10 24q0 .65-.425 1.075-.425.425-1.075.425Zm36 0q-.65 0-1.075-.425Q38 24.65 38 24q0-.65.425-1.075.425-.425 1.075-.425h5q.65 0 1.075.425Q46 23.35 46 24q0 .65-.425 1.075-.425.425-1.075.425ZM24 10q-.65 0-1.075-.425Q22.5 9.15 22.5 8.5v-5q0-.65.425-1.075Q23.35 2 24 2q.65 0 1.075.425.425.425.425 1.075v5q0 .65-.425 1.075Q24.65 10 24 10Zm0 36q-.65 0-1.075-.425-.425-.425-.425-1.075v-5q0-.65.425-1.075Q23.35 38 24 38q.65 0 1.075.425.425.425.425 1.075v5q0 .65-.425 1.075Q24.65 46 24 46ZM12 14.1l-2.85-2.8q-.45-.45-.425-1.075.025-.625.425-1.075.45-.45 1.075-.45t1.075.45L14.1 12q.4.45.4 1.05 0 .6-.4 1-.4.45-1.025.45-.625 0-1.075-.4Zm24.7 24.75L33.9 36q-.4-.45-.4-1.075t.45-1.025q.4-.45 1-.45t1.05.45l2.85 2.8q.45.45.425 1.075-.025.625-.425 1.075-.45.45-1.075.45t-1.075-.45ZM33.9 14.1q-.45-.45-.45-1.05 0-.6.45-1.05l2.8-2.85q.45-.45 1.075-.425.625.025 1.075.425.45.45.45 1.075t-.45 1.075L36 14.1q-.4.4-1.025.4-.625 0-1.075-.4ZM9.15 38.85q-.45-.45-.45-1.075t.45-1.075L12 33.9q.45-.45 1.05-.45.6 0 1.05.45.45.45.45 1.05 0 .6-.45 1.05l-2.8 2.85q-.45.45-1.075.425-.625-.025-1.075-.425Z"/>
+                    </svg>
+                </button>
             </div>
         </nav>
+
+        <dialog data-state="closed" class="modal-nav" id="modal-nav">
+            <ul class="modal-nav-bar" id="nav-bar">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="conservation.html" class="active">Conservation</a>
+                </li>
+                <li>
+                    <a href="fishing.html">Fishing</a>
+                </li>
+                <li>
+                    <a href="mining.html">Mining</a>
+                </li>
+            </ul>
+
+            <button aria-label="Close navigation menu" class="close-modal" id="close-modal">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" focusable="false" aria-hidden="true" width="2rem">
+                    <path fill="currentColor" d="m12.45 37.65-2.1-2.1L21.9 24 10.35 12.45l2.1-2.1L24 21.9l11.55-11.55 2.1 2.1L26.1 24l11.55 11.55-2.1 2.1L24 26.1Z"/>
+                </svg>
+            </button>
+        </dialog>
     </header>
 
     <main>
-        <h1 hidden>Conservation</h1>
+        <h1 class="visually-hidden">Conservation</h1>
 
         <section class="section">
-            <button class="accordion" id="plains" aria-expanded="true" aria-controls="plains-content">
+            <button aria-expanded="true" aria-controls="plains-content" class="accordion" id="plains">
                 <h2>Plains of Eidolon</h2>
                 <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" viewBox="0 0 48 48" class="svg-open">
                     <path fill="currentColor" d="M22.5 38V25.5H10V22.5H22.5V10H25.5V22.5H38V25.5H25.5V38Z"/>
@@ -284,7 +310,7 @@
         </section>
 
         <section class="section">
-            <button class="accordion" id="vallis" aria-expanded="true" aria-controls="vallis-content">
+            <button aria-expanded="true" aria-controls="vallis-content" class="accordion" id="vallis">
                 <h2>Orb Vallis</h2>
                 <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" viewBox="0 0 48 48" class="svg-open">
                     <path fill="currentColor" d="M22.5 38V25.5H10V22.5H22.5V10H25.5V22.5H38V25.5H25.5V38Z"/>
@@ -630,7 +656,7 @@
         </section>
 
         <section class="section">
-            <button class="accordion" id="cambion" aria-expanded="true" aria-controls="cambion-content">
+            <button aria-expanded="true" aria-controls="cambion-content" class="accordion" id="cambion">
                 <h2>Cambion Drift</h2>
                 <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" viewBox="0 0 48 48" class="svg-open">
                     <path fill="currentColor" d="M22.5 38V25.5H10V22.5H22.5V10H25.5V22.5H38V25.5H25.5V38Z"/>
@@ -990,10 +1016,11 @@
         </span>
 
         <span class="footer-copyright">
-            &copy;2022 iFrame. All rights reserved.
+            &copy;2023 iFrame. All rights reserved.
         </span>
     </footer>
 
     <script src="config.js" type="module"></script>
+    <script src="config-accordion.js" type="module"></script>
 </body>
 </html>

@@ -1,33 +1,45 @@
+main {
+    padding-inline: var(--spc-default);
+}
+
 .section {
     display: grid;
     gap: 1px;
+    border-radius: var(--spc-default);
+    background-color: var(--shadow);
+}
 
-    padding-inline: var(--spc-default);
+.section:nth-of-type(2) {
+    margin-block: var(--spc-md);
+}
+
+.section:nth-of-type(3) {
+    margin-bottom: var(--spc-md);
 }
 
 .accordion {
     cursor: pointer;
-    outline: 1px solid var(--black-10);
-
     display: flex;
     align-items: center;
-
     background-color: transparent;
-    border: none;
+    border: 0;
+    border-radius: var(--spc-default);
 }
 
 .accordion:hover,
 .accordion:focus-visible {
-    outline-color: initial;
+    outline: 2px solid var(--hover-color);
 }
 
 .accordion h2 {
+    color: var(--color);
     margin-left: var(--spc-default);
 }
 
 .accordion svg {
+    color: var(--color);
     margin-left: auto;
-    margin-right: var(--spc-xsm);
+    margin-right: var(--spc-default);
 }
 
 .svg-open {
@@ -42,47 +54,22 @@
 #vallis[aria-expanded="true"] + .section-content,
 #cambion[aria-expanded="true"] + .section-content {
     display: initial;
-
-    outline: 1px solid var(--black-10);
+    border-top: 2px solid var(--black-25);
     padding: var(--spc-sm) var(--spc-default);
 }
 
 .container {
     display: grid;
+    align-items: start;
 }
 
 .container h3 {
     text-align: center;
-    background-color: var(--gray);
+    background-color: var(--black-25);
 }
 
 .container p {
     max-width: 70ch;
-}
-
-.table-info {
-    margin-top: var(--spc-default);
-    text-align: center;
-}
-
-.standing {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.standing p:nth-child(1),
-.standing p:nth-child(2),
-.standing p:nth-child(3) {
-    background-color: hsl(187, 56%, 96%);
-}
-
-.standing p {
-    outline: 1px solid lightgray;
-    padding: var(--spc-xsm);
-}
-
-.standing p {
-    font-size: var(--fs-xsm);
 }
 
 @media (min-width: 43.75em) {
@@ -97,9 +84,5 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: var(--spc-default);
-    }
-
-    .standing p {
-        font-size: var(--fs-sm);
     }
 }

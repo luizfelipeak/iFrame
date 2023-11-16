@@ -1,114 +1,120 @@
 :root {
     /* ----- Default 16px ----- */
-        /* 64px */
-        --fs-xxxlg: 4rem;
-        /* 40px */
-        --fs-xxlg: 2.5rem;
-        /* 32px */
-        --fs-xlg: 2rem;
-        /* 24px */
-        --fs-lg: 1.5rem;
-        /* 16px */
-        --fs-default: 1rem;
-        /* 15px */
-        --fs-sm: 0.9375rem;
-        /* 12px */
-        --fs-xsm: 0.75rem;
-    /* ------------------------ */
+    /* 64px */
+    --fs-xxxlg: 4rem;
+    /* 40px */
+    --fs-xxlg: 2.5rem;
+    /* 32px */
+    --fs-xlg: 2rem;
+    /* 24px */
+    --fs-lg: 1.5rem;
+    /* 16px */
+    --fs-default: 1rem;
+    /* 15px */
+    --fs-sm: 0.9375rem;
+    /* 12px */
+    --fs-xsm: 0.75rem;
 
     /* ----- Spacing ----- */
-        --spc-xxxlg: 32em;
-        --spc-xxlg: 16em;
-        --spc-xlg: 8em;
-        --spc-lg: 4em;
-        --spc-md: 2em;
-        --spc-default: 1em;
-        --spc-sm: 0.5em;
-        --spc-xsm: 0.25em;
-    /* ------------------- */
+    --spc-xxxlg: 32em;
+    --spc-xxlg: 16em;
+    --spc-xlg: 8em;
+    --spc-lg: 4em;
+    --spc-md: 2em;
+    --spc-default: 1em;
+    --spc-sm: 0.5em;
+    --spc-xsm: 0.25em;
 
     /* ----- Colors ----- */
-        --primary: #5b2fec;
-        --secondary: #e3f6f5;
-        --tertiary: #bae8e8;
-        --quaternary: #2c698d;
-        --alert: #E53847;
+    --white: hsla(0, 0%, 100%, 1);
+    --black: hsl(0, 0%, 0%);
+    --clr-primary: #856fff;
+    --clr-secondary: hsl(190, 70%, 50%);
+    --clr-tertiary: hsl(0, 53%, 36%);
+    --clr-quaternary: hsl(205, 46%, 14%);
 
-        --gray: hsl(0, 0%, 97%);
+    --black-75: hsla(0, 0%, 0%, 75%);
+    --black-50: hsla(0, 0%, 0%, 50%);
+    --black-25: hsla(0, 0%, 0%, 25%);
+    --black-10: hsla(0, 0%, 0%, 10%);
+    --black-5: hsla(0, 0%, 0%, 5%);
 
-        --black: hsl(0, 0%, 0%);
-        --black-75: hsla(0, 0%, 0%, 75%);
-        --black-50: hsla(0, 0%, 0%, 50%);
-        --black-25: hsla(0, 0%, 0%, 25%);
-        --black-10: hsla(0, 0%, 0%, 10%);
-
-        --white: hsla(0, 0%, 100%, 1);
-
-        --hover-color: hsl(190, 70%, 50%);
-        --active-color: #5b2fec;
-    /* ------------------ */
+    --hover-color: var(--clr-secondary);
+    --active-color: var(--clr-primary);
 
     --color: var(--black);
     --theme: var(--white);
-    --shadow: var(--black-10);
+    --shadow: var(--black-5);
+    --clr-skeleton: var(--black-10);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color: var(--white);
+        --theme: var(--clr-quaternary);
+        --shadow: var(--black-25);
+        --clr-skeleton: var(--black-50);
+    }
 }
 
 /* ---------- CSS Reset ---------- */
-    /* Box sizing rules */
-    *,
-    *::before,
-    *::after {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-    /* Set core root defaults */
-    html:focus-within {
-        scroll-behavior: smooth;
-    }
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
 
-    body {
-        text-rendering: optimizeSpeed;
-        line-height: 1.5;
-    }
+body {
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
 
-    /* A elements that don't have a class get default styles */
-    a:not([class]) {
-        text-decoration-skip-ink: auto;
-    }
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
 
-    /* Make images easier to work with */
-    img,
-    picture {
-        max-width: 100%;
-        display: block;
-    }
+/* Make images easier to work with */
+img,
+svg,
+picture {
+    max-width: 100%;
+    display: block;
+}
 
-    /* Inherit fonts for inputs and buttons */
-    input,
-    button,
-    textarea,
-    select {
-        font: inherit;
-    }
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
 
-    /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
-    @media (prefers-reduced-motion: reduce) {
-        html:focus-within {
-            scroll-behavior: auto;
-        }
-      
-        *,
-        *::before,
-        *::after {
-            animation-duration: 0.01ms !important;
-            animation-iteration-count: 1 !important;
-            transition-duration: 0.01ms !important;
-            scroll-behavior: auto !important;
-        }
-    }
-/* ------------------------------- */
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+}
+
+.hide {
+    display: none;
+}
+
+html {
+    color-scheme: light dark;
+}
 
 body {
     color: var(--color);
@@ -116,194 +122,239 @@ body {
 }
 
 /* ----------- Header ----------- */
-    .header-nav {
-        z-index: 1;
+.nav-site {
+    display: flex;
+    align-items: center;
+    gap: var(--spc-md);
+
+    position: relative;
+}
+
+.nav-btn {
+    cursor: pointer;
+    width: 3rem;
+    height: 3rem;
+    margin-left: var(--spc-default);
+    border: none;
+    color: var(--color);
+    background-color: transparent;
+}
+
+.nav-btn:hover,
+.nav-btn:focus-visible {
+    color: var(--hover-color);
+}
+
+.nav-btn svg,
+.close-modal svg,
+.nav-logo svg {
+    display: block;
+    margin: auto;
+}
+
+.nav-logo {
+    color: var(--active-color);
+}
+
+.nav-logo:hover {
+    color: var(--hover-color);
+}
+
+.nav-bar {
+    display: none;
+    gap: var(--spc-default);
+    list-style: none;
+}
+
+.nav-bar a {
+    color: var(--color);
+    text-decoration: none;
+}
+
+.nav-bar a:hover,
+.nav-bar a:focus-visible {
+    color: var(--hover-color);
+}
+
+.nav-bar a.active {
+    color: var(--active-color);
+}
+
+/* ---------------- Modal (Dialog) ---------------- */
+.modal-nav {
+    width: auto;
+    height: auto;
+    border-color: var(--theme);
+    background: var(--theme);
+    margin: revert;
+    padding: revert;
+    box-sizing: revert;
+    clip-path: circle(0% at 0 0);
+}
+
+.modal-nav::backdrop {
+    background-color: transparent;
+}
+
+.modal-nav-bar {
+    font-size: 2.25rem;
+    list-style: none;
+}
+
+.modal-nav-bar a {
+    color: var(--color);
+    text-decoration: none;
+}
+
+.modal-nav-bar a:hover,
+.modal-nav-bar a:focus-visible {
+    color: var(--hover-color);
+}
+
+.modal-nav-bar a.active {
+    color: var(--active-color);
+}
+
+.close-modal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    color: var(--color);
+    background-color: transparent;
+}
+
+.close-modal:hover,
+.close-modal:focus-visible {
+    color: var(--hover-color);
+}
+
+/* ---------------- Theme button ---------------- */
+.theme-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 1rem;
+    max-height: fit-content;
+    margin-block: auto;
+    background-color: transparent;
+    border: none;
+    border-radius: 100vw;
+    outline: 1px solid transparent;
+    outline-offset: var(--spc-xsm);
+}
+
+.theme-btn:hover,
+.theme-btn:focus-visible {
+    outline: 1px solid var(--color);
+}
+
+.theme-btn svg {
+    color: var(--color);
+    width: 2.25rem;
+    height: 2.25rem;
+}
+
+/* ------------ Footer ------------ */
+footer {
+    display: grid;
+    justify-items: center;
+    gap: var(--spc-md);
+
+    font-size: clamp(var(--fs-xsm), 1vw + 0.5rem, var(--fs-default));
+    color: var(--color);
+    background-color: var(--shadow);
+
+    padding-block: var(--spc-lg);
+    padding-inline: var(--spc-default);
+}
+
+.footer-copyright {
+    max-width: 80ch;
+    line-height: 1.7;
+}
+
+.footer-copyright a {
+    color: var(--clr-secondary);
+}
+
+.footer-copyright a:visited {
+    color: var(--active-color);
+}
+
+/* ---------------- Animation ---------------- */
+@media (prefers-reduced-motion: no-preference) {
+    /* .hiding {
+        animation: animateOpacity 0.5s linear forwards reverse;
+    }
+    
+    .showing {
+        animation: animateOpacity 0.5s linear forwards;
+    }
+    
+    @keyframes animateOpacity {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    } */
+
+    .modal-nav[data-state="closing"] {
+        animation: closingAnimation 0.5s ease-in forwards;
     }
 
+    @keyframes closingAnimation {
+        from {
+            clip-path: circle(150% at 0 0);
+        }
+        to {
+            clip-path: circle(0% at 0 0);
+        }
+    }
+    
+    .modal-nav[data-state="opened"] {
+        animation: openingAnimation 0.5s cubic-bezier(0.86, 0.09, 0.74, 0.9) forwards;
+    }
+
+    @keyframes openingAnimation {
+        from {
+            clip-path: circle(0% at 0 0);
+        }
+        to {
+            clip-path: circle(150% at 0 0);
+        }
+    }
+
+    .theme-btn {
+        transition: outline 0.25s linear;
+    }
+}
+
+/* ------------ Tablet (700px) ------------ */
+@media (min-width: 43.75em) {
+    /* --------- header --------- */
     .nav-site {
-        display: flex;
-        align-items: center;
-        gap: var(--spc-md);
+        flex-direction: column;
+        gap: initial;
+        
+        padding-block: var(--spc-default);
     }
 
-    #nav-btn {
-        cursor: pointer;
-        width: 3rem;
-        height: 3rem;
-        margin-left: var(--spc-default);
-        border: none;
-        color: var(--color);
-        background-color: transparent;
-    }
-
-    #nav-btn:hover,
-    #nav-btn:focus-visible {
-        color: var(--hover-color);
-    }
-
-    #nav-btn svg,
-    #close-modal svg,
-    .nav-logo svg {
-        display: block;
-        margin: auto;
-    }
-
-    .nav-logo {
-        color: var(--primary);
-    }
-
-    .nav-logo:hover {
-        color: var(--hover-color);
+    .nav-btn {
+        display: none;
     }
 
     .nav-bar {
-        display: none;
-        gap: var(--spc-default);
-        list-style: none;
-    }
-
-    .nav-bar a {
-        color: var(--color);
-        text-decoration: none;
-    }
-
-    .nav-bar a:hover,
-    .nav-bar a:focus-visible {
-        color: var(--hover-color);
-    }
-
-    .nav-bar a.active {
-        color: var(--active-color);
-    }
-
-    #modal-nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(180deg, var(--black-10), var(--black-25));
-
-        padding-top: 3em;
-        z-index: 1;
-        display: none;
-    }
-
-    #modal-nav[data-state="opened"] {
-        display: block;
-    }
-
-    .modal-content {
-        max-width: 95%;
-        padding: 1em;
-        margin: auto;
-        border: none;
-        background-color: var(--theme);
-        outline-offset: -0.5em;
-        box-shadow: 0 0 0.5em var(--black-50);
-        position: relative;
-    }
-
-    .modal-nav-bar a {
-        color: var(--color);
-        text-decoration: none;
-    }
-
-    .modal-nav-bar a:hover,
-    .modal-nav-bar a:focus-visible {
-        color: var(--hover-color);
-    }
-
-    .modal-nav-bar a.active {
-        color: var(--active-color);
-    }
-
-    #close-modal {
-        position: absolute;
-        top: 0;
-        right: 0;
-        cursor: pointer;
-        width: 3rem;
-        height: 3rem;
-        border: none;
-        color: var(--color);
-        background-color: var(--theme);
-    }
-
-    #close-modal:hover,
-    #close-modal:focus-visible {
-        color: var(--hover-color);
-    }
-
-    .modal-nav-bar {
-        display: grid;
-        justify-content: center;
-        gap: var(--spc-xsm);
-
-        list-style: none;
-    }
-
-    .modal-nav-bar li {
-        text-align: center;
-        min-width: calc(100vw - 6rem);
-    }
-
-    .modal-nav-bar li:not(:last-child) {
-        border-bottom: 1px solid lightgray;
-    }
-/* ------------------------------ */
-
-/* ---------- main ---------- */
-    section {
-        margin-bottom: var(--spc-md);
-    }
-/* -------------------------- */
-
-/* ------------ Footer ------------ */
-    footer {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: var(--spc-md);
-
-        font-size: clamp(var(--fs-xsm), 1vw + 0.5rem, var(--fs-default));
-        color: var(--color);
-        background-color: var(--gray);
-        min-height: 10rem;
-
-        padding-top: var(--spc-lg);
-        padding-bottom: var(--spc-lg);
     }
 
-    .footer-copyright {
-        max-width: 80ch;
-        line-height: 1.7;
-        padding-left: var(--spc-default);
-        padding-right: var(--spc-default);
+    .theme-btn {
+        right: 3rem;
     }
-/* -------------------------------- */
-
-/* ------------ Tablet (700px) ------------ */
-    @media (min-width: 43.75em) and (min-height:  25em) {
-        /* --------- header --------- */
-            .nav-site {
-                flex-direction: column;
-                justify-content: center;
-                gap: initial;
-                
-                padding-top: var(--spc-default);
-                padding-bottom: var(--spc-default);
-            }
-
-            #nav-btn,
-            #modal-nav[data-state="opened"] {
-                display: none;
-            }
-
-            .nav-bar {
-                display: flex;
-            }
-        /* -------------------------- */
-    }
-/* ---------------------------------------- */
+}

@@ -1,132 +1,166 @@
+main {
+    margin-inline: var(--spc-default);
+    margin-bottom: var(--spc-md);
+}
+
+/* ---------- main ---------- */
+section {
+    padding: var(--spc-default);
+    border-radius: var(--spc-default);
+    background-color: var(--shadow);
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: auto;
+    gap: var(--spc-default);
+    max-width: 1015px;
+    margin-inline: auto;
+}
+
+.auto-layout {
+    grid-template-columns: auto;
+}
+
+.alert {
+    z-index: 1;
+    position: fixed;
+    top: 5rem;
+    left: 0;
+    right: 0;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spc-default);
+    color: var(--white);
+    background-color: var(--clr-tertiary);
+}
+
+.alert.show {
+    display: flex;
+}
+
+.close-alert {
+    cursor: pointer;
+    border: 0;
+    color: var(--white);
+    background-color: transparent;
+}
+
+.close-alert:hover,
+.close-alert:focus-visible {
+    color: var(--hover-color);
+}
+
 /* ----- Utility class ----- */
-    .section h2 {
-        text-align: center;
-    }
+.section h2 {
+    text-align: center;
+}
 
-    .section-content {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, 14rem);
-        justify-content: center;
-        justify-items: center;
-        gap: var(--spc-default);
-    }
+.section-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, auto));
+    gap: var(--spc-default);
+}
 
-    .container {
-        display: grid;
-        gap: var(--spc-sm);
-        position: relative;
-    }
+.container {
+    display: grid;
+    gap: var(--spc-sm);
+    position: relative;
+}
 
-    .skeleton {
-        position: absolute;
-        top: 0.1em;
-        right: 0.5em;
-        
-        width: 3rem;
-        height: 3rem;
-        border-radius: 50%;
-        animation: skeletonLoading 1s linear infinite alternate;
-    }
+.container h3 {
+    color: var(--clr-secondary);
+}
 
+.skeleton-text {
+    height: 1.5rem;
+    border-radius: 0.25rem;
+}
+
+/* ----- Alerts and void fissures ----- */
+.buttons-container {
+    display: grid;
+    gap: var(--spc-sm);
+    margin-block: var(--spc-default);
+}
+
+.tiers-container,
+.type-container,
+.difficulty-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spc-sm);
+}
+
+.tiers-container button,
+.type-container button,
+.difficulty-container button {
+    cursor: pointer;
+    padding: var(--spc-sm);
+    border: none;
+    color: var(--color);
+    background-color: transparent;
+}
+
+.tiers-container button.active,
+.type-container button.active,
+.difficulty-container button.active {
+    cursor: not-allowed;
+    background-color: var(--active-color);
+    border-radius: var(--spc-md);
+}
+
+.type-container button.disabled,
+.difficulty-container button.disabled {
+    cursor: not-allowed;
+}
+
+/* ---------------- Animation ---------------- */
+@media (prefers-reduced-motion: no-preference) {
     .skeleton-text {
-        width: 10rem;
-        height: 1.5rem;
-        border-radius: 0.25rem;
         animation: skeletonLoading 1s linear infinite alternate;
     }
 
     @keyframes skeletonLoading {
         0% {
-            background-color: hsl(0, 0%, 90%);
+            background-color: var(--clr-skeleton);
         }
-
+    
         100% {
             background-color: transparent;
         }
     }
 
-    .auto-layout {
-        grid-template-columns: auto;
-        padding-inline: var(--spc-default);
+    .alert {
+        animation: showAnimation 0.5s ease-in forwards;
     }
 
-    .full-size {
-        justify-items: initial;
+    @keyframes showAnimation {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
     }
-/* ------------------------- */
+}
 
-/* ----- Main section ----- */
-    #svg-earth-day,
-    #svg-earth-night,
-    #svg-poe-day,
-    #svg-poe-night,
-    #svg-vallis-warm,
-    #svg-vallis-cold,
-    #cambion-fass,
-    #cambion-vome {
-        position: absolute;
-        top: 0.1em;
-        right: 0.5em;
-        display: none;
+/* ---------------- 800px ---------------- */
+@media (min-width: 50em) {
+    .grid-layout {
+        grid-template-columns: repeat(3, 1fr);
     }
 
-    #svg-earth-day,
-    #svg-poe-day {
-        color: hsl(30, 100%, 70%);
+    .full-width {
+        grid-column: 1 / -1;
     }
 
-    #svg-earth-night,
-    #svg-poe-night {
-        color: hsl(0, 0%, 80%);
+    .grid-space {
+        justify-content: space-evenly;
     }
-
-    #svg-vallis-warm {
-        color: hsl(20, 100%, 40%);
+    
+    .grid-col-span-2 {
+        grid-column: span 2;
     }
-
-    #svg-vallis-cold {
-        color: hsl(0, 0%, 80%);
-    }
-
-    #cambion-fass,
-    #cambion-vome {
-        width: 3rem;
-        height: 3rem;
-    }
-/* ------------------------ */
-
-/* ----- Alerts and void fissures ----- */
-    .buttons-container {
-        display: grid;
-        gap: var(--spc-default);
-        margin-block: var(--spc-default);
-    }
-
-    .tiers-container,
-    .type-container {
-        display: flex;
-        justify-content: center;
-        gap: var(--spc-default);
-    }
-
-    .tiers-container button,
-    .type-container button {
-        cursor: pointer;
-        padding: var(--spc-sm);
-        border: none;
-        background-color: transparent;
-    }
-
-    .tiers-container button.active,
-    .type-container button.active {
-        cursor: not-allowed;
-        color: var(--white);
-        background-color: var(--primary);
-        border-radius: var(--spc-md);
-    }
-
-    #alerts .container > p,
-    #fissures .container > p {
-        text-align: center;
-    }
-/* ------------------------------------ */
+}
