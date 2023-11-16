@@ -1,9 +1,8 @@
 function getTimeofVoidFissures(apiData) {
-    let expiry, now, sec, min, hour;
-
     setInterval(() => {
+        let expiry, now, sec, min, hour;
         const fissures = [];
-        apiData.forEach((item, index) => {
+        apiData.forEach((item) => {
             if(item.active === true) {
                 expiry = new Date(item.expiry);
                 now = new Date();
@@ -17,13 +16,12 @@ function getTimeofVoidFissures(apiData) {
 
                 if(hour <= 0 && min <= 0 && sec <= 0) {
                     fissures.push({
-                            title: `${item.tier} - ${item.node} - ${item.missionType}`,
                             time: `Expired.`
                         }
                     );
-                } else {
+                }
+                else {
                     fissures.push({
-                            title: `${item.tier} - ${item.node} - ${item.missionType}`,
                             time: `${hour}h:${min}m:${sec}s`
                         }
                     );
@@ -33,7 +31,7 @@ function getTimeofVoidFissures(apiData) {
         postMessage(fissures);
     },1000);
 }
-    
+
 onmessage = (response) => {
     getTimeofVoidFissures(response.data);
 };
