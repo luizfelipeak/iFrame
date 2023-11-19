@@ -183,7 +183,6 @@ body {
     margin: revert;
     padding: revert;
     box-sizing: revert;
-    clip-path: circle(0% at 0 0);
 }
 
 .modal-nav::backdrop {

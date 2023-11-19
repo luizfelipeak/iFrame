@@ -16,8 +16,8 @@ window.addEventListener("resize", () => {
 // ----------- Click event to open/close navigation menu (Dialog) -----------
 navButton.addEventListener("click", () => {
     navButton.setAttribute("aria-expanded", "true");
-    modalNav.showModal();
     modalNav.setAttribute("data-state", "opened");
+    modalNav.showModal();
 });
 
 closeModal.addEventListener("click", () => {
@@ -33,10 +33,16 @@ function closeDialogModal() {
     navButton.setAttribute("aria-expanded", "false");
     modalNav.setAttribute("data-state", "closing");
 
-    modalNav.addEventListener("animationend", () => {
+    if(window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+        modalNav.addEventListener("animationend", () => {
+            modalNav.close();
+            modalNav.setAttribute("data-state", "closed");
+        }, {once: true});
+    }
+    else {
         modalNav.close();
         modalNav.setAttribute("data-state", "closed");
-    }, {once: true});
+    }
 }
 
 // ----------- Event of the light theme button -----------
