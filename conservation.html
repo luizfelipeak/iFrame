@@ -17,20 +17,18 @@
 </head>
 <body>
     <script>
-        const root = document.querySelector(":root");
+        const body = document.querySelector("body");
+
         if(localStorage.getItem("theme")) {
             if(localStorage.getItem("theme") === "dark-mode") {
-                root.style.setProperty("--color", "var(--white)");
-                root.style.setProperty("--theme", "var(--clr-quaternary)");
-                root.style.setProperty("--shadow", "var(--black-25)");
-                root.style.setProperty("--clr-skeleton", "var(--black-50)");
+                body.classList.add("dark-theme");
             }
             else {
-                root.style.setProperty("--color", "var(--black)");
-                root.style.setProperty("--theme", "var(--white)");
-                root.style.setProperty("--shadow", "var(--black-5)");
-                root.style.setProperty("--clr-skeleton", "var(--black-10)");
+                body.classList.remove("dark-theme");
             }
+        }
+        else if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            body.classList.add("dark-theme");
         }
     </script>
     
@@ -64,13 +62,15 @@
                     </li>
                 </ul>
 
-                <button aria-label="Change to dark mode" title="Change to dark mode" class="theme-btn" id="theme">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="36px" height="36px" viewBox="0 0 48 48" focusable="false" aria-hidden="true" class="dark-mode hide" id="dark-mode">
+                <button aria-label="Change to dark mode" title="Change to dark mode" class="theme-btn" id="dark-theme">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36px" height="36px" viewBox="0 0 48 48" focusable="false" aria-hidden="true" class="dark-mode">
                         <path fill="currentColor" d="M24 42q-7.5 0-12.75-5.25T6 24q0-7.5 5.25-12.75T24 6q.4 0 .85.025.45.025 1.15.075-1.8 1.6-2.8 3.95-1 2.35-1 4.95 0 4.5 3.15 7.65Q28.5 25.8 33 25.8q2.6 0 4.95-.925T41.9 22.3q.05.6.075.975Q42 23.65 42 24q0 7.5-5.25 12.75T24 42Z"/>
                     </svg>
+                </button>
 
-                    <svg xmlns="http://www.w3.org/2000/svg" width="36px" height="36px" viewBox="0 0 48 48" focusable="false" aria-hidden="true" class="light-mode hide" id="light-mode">
-                        <path fill="currentColor" d="M24 34q-4.15 0-7.075-2.925T14 24q0-4.15 2.925-7.075T24 14q4.15 0 7.075 2.925T34 24q0 4.15-2.925 7.075T24 34ZM3.5 25.5q-.65 0-1.075-.425Q2 24.65 2 24q0-.65.425-1.075Q2.85 22.5 3.5 22.5h5q.65 0 1.075.425Q10 23.35 10 24q0 .65-.425 1.075-.425.425-1.075.425Zm36 0q-.65 0-1.075-.425Q38 24.65 38 24q0-.65.425-1.075.425-.425 1.075-.425h5q.65 0 1.075.425Q46 23.35 46 24q0 .65-.425 1.075-.425.425-1.075.425ZM24 10q-.65 0-1.075-.425Q22.5 9.15 22.5 8.5v-5q0-.65.425-1.075Q23.35 2 24 2q.65 0 1.075.425.425.425.425 1.075v5q0 .65-.425 1.075Q24.65 10 24 10Zm0 36q-.65 0-1.075-.425-.425-.425-.425-1.075v-5q0-.65.425-1.075Q23.35 38 24 38q.65 0 1.075.425.425.425.425 1.075v5q0 .65-.425 1.075Q24.65 46 24 46ZM12 14.1l-2.85-2.8q-.45-.45-.425-1.075.025-.625.425-1.075.45-.45 1.075-.45t1.075.45L14.1 12q.4.45.4 1.05 0 .6-.4 1-.4.45-1.025.45-.625 0-1.075-.4Zm24.7 24.75L33.9 36q-.4-.45-.4-1.075t.45-1.025q.4-.45 1-.45t1.05.45l2.85 2.8q.45.45.425 1.075-.025.625-.425 1.075-.45.45-1.075.45t-1.075-.45ZM33.9 14.1q-.45-.45-.45-1.05 0-.6.45-1.05l2.8-2.85q.45-.45 1.075-.425.625.025 1.075.425.45.45.45 1.075t-.45 1.075L36 14.1q-.4.4-1.025.4-.625 0-1.075-.4ZM9.15 38.85q-.45-.45-.45-1.075t.45-1.075L12 33.9q.45-.45 1.05-.45.6 0 1.05.45.45.45.45 1.05 0 .6-.45 1.05l-2.8 2.85q-.45.45-1.075.425-.625-.025-1.075-.425Z"/>
+                <button aria-label="Change to light mode" title="Change to light mode" class="theme-btn" id="light-theme">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36px" height="36px" viewBox="0 -960 960 960" focusable="false" aria-hidden="true" class="light-mode">
+                        <path fill="currentColor" d="M480-360q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Zm0 80q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM80-440q-17 0-28.5-11.5T40-480q0-17 11.5-28.5T80-520h80q17 0 28.5 11.5T200-480q0 17-11.5 28.5T160-440H80Zm720 0q-17 0-28.5-11.5T760-480q0-17 11.5-28.5T800-520h80q17 0 28.5 11.5T920-480q0 17-11.5 28.5T880-440h-80ZM480-760q-17 0-28.5-11.5T440-800v-80q0-17 11.5-28.5T480-920q17 0 28.5 11.5T520-880v80q0 17-11.5 28.5T480-760Zm0 720q-17 0-28.5-11.5T440-80v-80q0-17 11.5-28.5T480-200q17 0 28.5 11.5T520-160v80q0 17-11.5 28.5T480-40ZM226-678l-43-42q-12-11-11.5-28t11.5-29q12-12 29-12t28 12l42 43q11 12 11 28t-11 28q-11 12-27.5 11.5T226-678Zm494 495-42-43q-11-12-11-28.5t11-27.5q11-12 27.5-11.5T734-282l43 42q12 11 11.5 28T777-183q-12 12-29 12t-28-12Zm-42-495q-12-11-11.5-27.5T678-734l42-43q11-12 28-11.5t29 11.5q12 12 12 29t-12 28l-43 42q-12 11-28 11t-28-11ZM183-183q-12-12-12-29t12-28l43-42q12-11 28.5-11t27.5 11q12 11 11.5 27.5T282-226l-42 43q-11 12-28 11.5T183-183Zm297-297Z"/>
                     </svg>
                 </button>
             </div>
@@ -1020,6 +1020,31 @@
         </span>
     </footer>
 
+    <script>
+        const lightTheme = document.getElementById("light-theme");
+        const darkTheme = document.getElementById("dark-theme");
+        
+        checkTheme();
+
+        function checkTheme() {
+            if(localStorage.getItem("theme") === "dark-mode") {
+                lightTheme.classList.remove("hide");
+                darkTheme.classList.add("hide");
+            }
+            else if(localStorage.getItem("theme") === "light-mode") {
+                lightTheme.classList.add("hide");
+                darkTheme.classList.remove("hide");
+            }
+            else if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                lightTheme.classList.remove("hide");
+                darkTheme.classList.add("hide");
+            }
+            else {
+                lightTheme.classList.add("hide");
+                darkTheme.classList.remove("hide");
+            }
+        }
+    </script>
     <script src="config.js" type="module"></script>
     <script src="config-accordion.js" type="module"></script>
 </body>

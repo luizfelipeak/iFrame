@@ -48,13 +48,11 @@
     --clr-skeleton: var(--black-10);
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --color: var(--white);
-        --theme: var(--clr-quaternary);
-        --shadow: var(--black-25);
-        --clr-skeleton: var(--black-50);
-    }
+body.dark-theme {
+    --color: var(--white);
+    --theme: var(--clr-quaternary);
+    --shadow: var(--black-25);
+    --clr-skeleton: var(--black-50);
 }
 
 /* ---------- CSS Reset ---------- */
@@ -110,10 +108,6 @@ select {
 
 .hide {
     display: none;
-}
-
-html {
-    color-scheme: light dark;
 }
 
 body {
@@ -288,23 +282,6 @@ footer {
 
 /* ---------------- Animation ---------------- */
 @media (prefers-reduced-motion: no-preference) {
-    /* .hiding {
-        animation: animateOpacity 0.5s linear forwards reverse;
-    }
-    
-    .showing {
-        animation: animateOpacity 0.5s linear forwards;
-    }
-    
-    @keyframes animateOpacity {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 1;
-        }
-    } */
-
     .modal-nav[data-state="closing"] {
         animation: closingAnimation 0.5s ease-in forwards;
     }
