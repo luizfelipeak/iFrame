@@ -99,9 +99,14 @@ async function connectAPI(url) {
                 });
             }
             else {
-                alertText.innerHTML = "Problem has occurred.";
+                alertText.innerHTML = "Problem has occurred, please try again later.";
                 alert.classList.add("show");
             }
+        })
+        .catch(result => {
+            alertText.innerHTML = "Problem has occurred, please try again later.";
+            alert.classList.add("show");
+            console.log(result);
         });
     }
     else {

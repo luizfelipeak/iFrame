@@ -25,7 +25,7 @@ section {
 .alert {
     z-index: 1;
     position: fixed;
-    top: 5rem;
+    bottom: 0;
     left: 0;
     right: 0;
     display: none;
